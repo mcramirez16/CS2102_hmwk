@@ -1,6 +1,13 @@
 
 public class RoboticsTeam {
-	//commenting for testing git links
 	
-	//another test comment
+	String school;
+	String specialFeat;
+	int preScore;
+	
+	public RoboticsTeam(String school, String specialFeat, int preScore) {
+		this.school = school;
+		this.specialFeat = specialFeat;
+		this.preScore = preScore;
+	}
 }
