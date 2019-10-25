@@ -1,5 +1,5 @@
 
-public class RugbyTeam {
+public class RugbyTeam implements IContestant{
 	
 	String country;
 	String jerseyColor;
@@ -14,4 +14,6 @@ public class RugbyTeam {
 		this.wins = wins;
 		this.losses = losses;
 	}
+
+	
 }

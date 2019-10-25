@@ -14,13 +14,13 @@ public class RugbyResult implements IResult {
 	}
 
 	@Override
-	public String getWinner() {
-		String winner;
+	public IContestant getWinner() {
+		IContestant winner;
 		if(team1pts > team2pts) {
-			winner = team1.country;
+			winner = team1;
 		}
 		else {
-			winner = team2.country;
+			winner = team2;
 		}
 		return winner;
 	}

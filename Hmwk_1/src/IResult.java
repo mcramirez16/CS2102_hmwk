@@ -1,5 +1,5 @@
 
 public interface IResult {
 	
-	public String getWinner();
+	public IContestant getWinner();
 }
