@@ -13,6 +13,15 @@ public class RugbyResult implements IResult {
 		this.team2pts = team2pts;
 	}
 
+	public boolean isValid(RugbyResult aResult) {
+		if(aResult.team1pts < 150 && aResult.team2pts < 150) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	@Override
 	public IContestant getWinner() {
 		IContestant winner;

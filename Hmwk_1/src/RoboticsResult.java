@@ -19,4 +19,13 @@ public class RoboticsResult {
 		this.team1fell = team1fell;
 		this.team2fell = team2fell;
 	}
+	
+	public boolean isValid(RoboticsResult aResult) {
+		if(aResult.team1tasks < 8 && aResult.team2tasks < 8 && aResult.team1pts <= 16 && aResult.team2pts <= 16) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
