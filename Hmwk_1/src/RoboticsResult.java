@@ -28,4 +28,20 @@ public class RoboticsResult {
 			return false;
 		}
 	}
+	
+	public int[] getScore(RoboticsResult aResult) {
+		int[] bothScores = new int[2];//Trying to use array to return the scores of both teams
+		bothScores[0] = (int) (aResult.team1pts + aResult.team1tasks);//Is this how you convert double to integer?
+		bothScores[1] = (int) (aResult.team2pts + aResult.team2tasks);
+		
+		if(team1fell = true) {
+			bothScores[0] = bothScores[0] - 5;
+		}
+		
+		if(team2fell = true) {
+			bothScores[1] = bothScores[1] - 5;
+		}
+		
+		return bothScores;
+	}
 }
