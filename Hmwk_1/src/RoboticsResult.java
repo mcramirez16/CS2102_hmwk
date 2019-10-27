@@ -29,10 +29,10 @@ public class RoboticsResult {
 		}
 	}
 	
-	public double getScore(double team1pts, int team1tasks, boolean team1fell) {
-		double score = team1pts + team1tasks;// not sure this is the correct way to do getScore, but at least conforms to compile check 
+	public double getScore(double teampts, int teamtasks, boolean teamfell) {//do these have to be the same with actual field names
+		double score = teampts + teamtasks;// not sure this is the correct way to do getScore, but at least conforms to compile check 
 		
-		if(team1fell = true) {
+		if(teamfell = true) {
 			score = score - 5;
 		}
 		
