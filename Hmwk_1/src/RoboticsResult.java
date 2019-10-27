@@ -9,7 +9,7 @@ public class RoboticsResult {
 	boolean team1fell;
 	boolean team2fell;
 	
-	public RoboticsResult(RoboticsTeam team1, RoboticsTeam team2, Double team1pts, Double team2pts, boolean team1fell, boolean team2fell, int team1tasks, int team2tasks) {
+	public RoboticsResult(RoboticsTeam team1, RoboticsTeam team2, Double team1pts, int team1tasks, boolean team1fell, Double team2pts, int team2tasks, boolean team2fell) {
 		this.team1 = team1;
 		this.team2 = team2;
 		this.team1pts = team1pts;
