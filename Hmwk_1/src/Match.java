@@ -1,15 +1,22 @@
 public class Match {
 
-	String contestant1;
-	String contestant2;
-	int c1Score;
-	int c2Score;
+	RugbyTeam Country1;
+	RugbyTeam Country2;
+	RugbyResult RugbyGame;
+	RoboticsTeam School1;
+	RoboticsTeam School2;
+	RoboticsResult RoboticsComp;
 	
-	public Match(String contestant1, String contestant2, int c1Score, int c2Score) {
-		this.contestant1 = contestant1;
-		this.contestant2 = contestant2;
-		this.c1Score = c1Score;
-		this.c2Score = c2Score;
+	public Match(RugbyTeam Country1, RugbyTeam Country2, RugbyResult RugbyGame) {
+		this.Country1 = Country1;
+		this.Country2 = Country2;
+		this.RugbyGame = RugbyGame;
+	}
+	
+	public Match(RoboticsTeam School1, RoboticsTeam School2, RoboticsResult RoboticsComp) {
+		this.School1 = School1;
+		this.School2 = School2;
+		this.RoboticsComp = RoboticsComp;
 	}
 	
 }
