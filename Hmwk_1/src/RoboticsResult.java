@@ -1,5 +1,5 @@
 
-public class RoboticsResult {
+public class RoboticsResult implements IResult {
 	RoboticsTeam team1;
 	RoboticsTeam team2;
 	Double team1pts;
@@ -38,4 +38,18 @@ public class RoboticsResult {
 		
 		return score;
 	}
+
+	@Override
+	public IContestant getWinner() {
+		IContestant winner;
+		if(getScore(team1pts, team1tasks, team1fell) > getScore(team2pts, team2tasks, team2fell)) {
+			winner = team1;
+		}
+		else {
+			winner = team2;
+		}
+		return winner;
+	}
+	
+	
 }
