@@ -13,8 +13,8 @@ public class RugbyResult implements IResult {
 		this.team2pts = team2pts;
 	}
 
-	public boolean isValid(RugbyResult aResult) {
-		if(aResult.team1pts < 150 && aResult.team2pts < 150) {
+	public boolean isValid() {
+		if(this.team1pts < 150 && this.team2pts < 150) {
 			return true;
 		}
 		else {

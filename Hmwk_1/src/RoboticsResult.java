@@ -20,8 +20,8 @@ public class RoboticsResult {
 		this.team2fell = team2fell;
 	}
 	
-	public boolean isValid(RoboticsResult aResult) {
-		if(aResult.team1tasks < 8 && aResult.team2tasks < 8 && aResult.team1pts <= 16 && aResult.team2pts <= 16) {
+	public boolean isValid() {
+		if(this.team1tasks < 8 && this.team2tasks < 8 && this.team1pts <= 16 && this.team2pts <= 16) {
 			return true;
 		}
 		else {

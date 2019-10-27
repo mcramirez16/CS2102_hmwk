@@ -15,5 +15,16 @@ public class RugbyTeam implements IContestant{
 		this.losses = losses;
 	}
 
-	
+	public boolean expectToBeat(RugbyTeam aTeam) {
+		
+		if(this.hasRitual == true && aTeam.hasRitual == false) {
+			return true;
+		}
+		else if((this.wins - this.losses) > (aTeam.wins - aTeam.losses)) {
+			return true;
+		}
+		else {
+			return false;
+		}	
+	}
 }
