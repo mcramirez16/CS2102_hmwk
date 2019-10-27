@@ -9,9 +9,6 @@ public class Match {
 		this.team2 = team2;
 		this.aResult = aResult;
 	}
-
-	public IContestant winner() {
-		if(isValid)
-	}
+// Really Don't know how to write winner because don't know how to properly call getWinner and isValid.
 	
 }
