@@ -29,5 +29,13 @@ public class RoboticsResult {
 		}
 	}
 	
-
+	public double getScore(double team1pts, int team1tasks, boolean team1fell) {
+		double score = team1pts + team1tasks;// not sure this is the correct way to do getScore, but at least conforms to compile check 
+		
+		if(team1fell = true) {
+			score = score - 5;
+		}
+		
+		return score;
+	}
 }
