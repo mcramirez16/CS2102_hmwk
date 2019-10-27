@@ -2,16 +2,16 @@ public class Match {
 
 	IContestant team1;
 	IContestant team2;
-	IResult aMatch;
+	IResult aResult;
 	
-	public Match(IContestant team1, IContestant team2, IResult aMatch) {
+	public Match(IContestant team1, IContestant team2, IResult aResult) {
 		this.team1 = team1;
 		this.team2 = team2;
-		this.aMatch = aMatch;
+		this.aResult = aResult;
 	}
 
 	public IContestant winner() {
-		
+		if(isValid)
 	}
 	
 }
