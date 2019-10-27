@@ -33,4 +33,6 @@ public class RugbyResult implements IResult {
 		}
 		return winner;
 	}
+	
+	
 }

@@ -1,22 +1,17 @@
 public class Match {
 
-	RugbyTeam Country1;
-	RugbyTeam Country2;
-	RugbyResult RugbyGame;
-	RoboticsTeam School1;
-	RoboticsTeam School2;
-	RoboticsResult RobotsComp;
+	IContestant team1;
+	IContestant team2;
+	IResult aMatch;
 	
-	public Match(RugbyTeam Country1, RugbyTeam Country2, RugbyResult RugbyGame) {
-		this.Country1 = Country1;
-		this.Country2 = Country2;
-		this.RugbyGame = RugbyGame;
+	public Match(IContestant team1, IContestant team2, IResult aMatch) {
+		this.team1 = team1;
+		this.team2 = team2;
+		this.aMatch = aMatch;
 	}
-	
-	public Match(RoboticsTeam School1, RoboticsTeam School2, RoboticsResult RobotsComp) {
-		this.School1 = School1;
-		this.School2 = School2;
-		this.RobotsComp = RobotsComp;
+
+	public IContestant winner() {
+		
 	}
 	
 }
