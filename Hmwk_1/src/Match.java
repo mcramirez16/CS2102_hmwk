@@ -11,4 +11,16 @@ public class Match {
 	}
 // Really Don't know how to write winner because don't know how to properly call getWinner and isValid.
 	
+	public IContestant winner() {
+		IContestant winner;
+		if(aResult.isValid()) {
+			winner = aResult.getWinner();
+		}
+		else {
+			winner = null;
+		}
+		return winner;
+		
+	}
+	
 }
