@@ -9,22 +9,7 @@ public class Match {
 		this.team2 = team2;
 		this.aResult = aResult;
 	}
-// Really Don't know how to write winner because don't know how to properly call getWinner and isValid.
 
-/*	
-	public IContestant winner() {
-		IContestant winner;
-		if(aResult.isValid()) {
-			winner = aResult.getWinner();
-		}
-		else {
-			winner = null;
-		}
-		return winner;
-		
-	}
-	
-*/
 	public IContestant winner() {
 		if(aResult.isValid()) {
 			return aResult.getWinner();
