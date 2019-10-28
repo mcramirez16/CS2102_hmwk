@@ -10,7 +10,8 @@ public class Match {
 		this.aResult = aResult;
 	}
 // Really Don't know how to write winner because don't know how to properly call getWinner and isValid.
-	
+
+/*	
 	public IContestant winner() {
 		IContestant winner;
 		if(aResult.isValid()) {
@@ -23,4 +24,14 @@ public class Match {
 		
 	}
 	
+*/
+	public IContestant winner() {
+		if(aResult.isValid()) {
+			return aResult.getWinner();
+		}
+		else {
+			return null;
+		}
+	}
+
 }
