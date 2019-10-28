@@ -34,7 +34,7 @@ public class Examples {
 		assertFalse(ecRobotResult.isValid());
 	}
 	
-	public void getScoreTest1() {
+	public void isValidRugbyTest1() {
 		
 	}
 
