@@ -12,15 +12,30 @@ public class Examples {
 	Double Au_points = 14.0;
 	
 	RugbyResult rugby_result = new RugbyResult(rugbyteam1,rugbyteam2,Uk_points,Au_points);
-	RoboticsResult robot_result = new RoboticsResult(robotteam1,robotteam2,40.0,12,false,50.0,1,true);
+	RoboticsResult ivRobotResult = new RoboticsResult(robotteam1,robotteam2,40.0,12,false,5.0,1,true);
+	RoboticsResult valRobotResult = new RoboticsResult(robotteam1, robotteam2, 10.0, 5, true, 14.0, 3, true);
+	RoboticsResult ecRobotResult = new RoboticsResult(robotteam1, robotteam2, 16.1, 8, true, 14.0, 3, true);
+	
 	
 	Match rugby_match = new Match(rugbyteam1,rugbyteam2,rugby_result);
-	Match robotics_match = new Match(robotteam1,robotteam2,robot_result);
+	Match robotics_match = new Match(robotteam1,robotteam2,ivRobotResult);
 	
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void isValidRoboticsTest1() {
+		assertFalse(ivRobotResult.isValid());
+	}
+	
+	public void isValidRoboticsTest2() {
+		assertTrue(valRobotResult.isValid());
+	}
+	
+	public void isValidRoboticsTest3() {
+		assertFalse(ecRobotResult.isValid());
+	}
+	
+	public void getScoreTest1() {
+		
 	}
 
 }
