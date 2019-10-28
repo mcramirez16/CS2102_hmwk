@@ -32,7 +32,7 @@ public class RoboticsResult implements IResult {
 	public double getScore(double teampts, int teamtasks, boolean teamfell) {//do these have to be the same with actual field names
 		double score = teampts + teamtasks;// not sure this is the correct way to do getScore, but at least conforms to compile check 
 		
-		if(teamfell = true) {
+		if(teamfell == true) {
 			score = score - 5;
 		}
 		
