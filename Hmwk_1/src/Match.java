@@ -11,7 +11,7 @@ public class Match {
 	}
 
 	public IContestant winner() {
-		if(aResult.isValid()==true) {
+		if(aResult.isValid()) {
 			return aResult.getWinner();
 		}
 		else {
