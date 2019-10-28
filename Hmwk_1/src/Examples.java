@@ -18,8 +18,10 @@ public class Examples {
 	RoboticsResult edgeRobotResult = new RoboticsResult(robotteam1, robotteam2, 16.1, 8, true, 14.0, 3, true);
 	
 	
-	Match rugby_match = new Match(rugbyteam1,rugbyteam2,validRugbyResult);
-	Match robotics_match = new Match(robotteam1,robotteam2,validRobotResult);
+	Match validRugbyMatch = new Match(rugbyteam1,rugbyteam2,validRugbyResult);
+	Match invalidRugbyMatch = new Match(rugbyteam1,rugbyteam2,invalidRugbyResult);
+	Match validRobotMatch = new Match(robotteam1,robotteam2,validRobotResult);
+	Match invalidRobotMatch = new Match(robotteam1,robotteam2,invalidRobotResult);
 	
 	//isValid() Tests for Robotic Results
 	@Test
@@ -53,6 +55,27 @@ public class Examples {
 		assertFalse(edgeRugbyResult.isValid());
 	}
 	
+	@Test
+	//getScore() Tests
+	public void scoreRobotResultTest1() {
+		double team1pts = validRobotResult.team1pts;
+		int team1tasks = validRobotResult.team1tasks;
+		boolean team1fell = validRobotResult.team1fell;
+		
+		assertEquals(validRobotResult.getScore(team1pts, team1tasks, team1fell), 15.0,0);
+				
+	}
+	
+	@Test
+		public void scoreRobotResultTest2() {
+			double team1pts = validRobotResult.team2pts;
+			int team1tasks = validRobotResult.team2tasks;
+			boolean team1fell = validRobotResult.team2fell;
+			
+			assertEquals(validRobotResult.getScore(team1pts, team1tasks, team1fell), 16.0,0);
+					
+		}
+	
 	//getWinner() Tests
 	@Test
 	public void winnerRugbyResultTest1() {
@@ -74,25 +97,28 @@ public class Examples {
 		assertEquals(edgeRobotResult.getWinner(),robotteam1);
 	}
 	
+	//winner() Tests
 	@Test
-	//getScore() Tests
-	public void scoreRobotResultTest1() {
-		double team1pts = validRobotResult.team1pts;
-		int team1tasks = validRobotResult.team1tasks;
-		boolean team1fell = validRobotResult.team1fell;
+	public void validRugbyWinnerTest() {
+		assertEquals(validRugbyMatch.winner(),rugbyteam1);
 		
-		assertEquals(validRobotResult.getScore(team1pts, team1tasks, team1fell), 15.0,0);
-				
 	}
 	
 	@Test
-		public void scoreRobotResultTest2() {
-			double team1pts = validRobotResult.team2pts;
-			int team1tasks = validRobotResult.team2tasks;
-			boolean team1fell = validRobotResult.team2fell;
-			
-			assertEquals(validRobotResult.getScore(team1pts, team1tasks, team1fell), 16.0,0);
-					
-		}
+	public void invalidRugbyWinnerTest() {
+		assertEquals(invalidRugbyMatch.winner(),null);
+	}
+	
+	@Test
+	public void validRobotWinnerTest() {
+		assertEquals(validRobotMatch.winner(),robotteam2);
+		
+	}
+	
+	@Test
+	public void invalidRobotWinnerTest() {
+		assertEquals(invalidRobotMatch.winner(),null);
+	}
+	
 	
 }
