@@ -3,7 +3,7 @@ public class Match {
 	IContestant team1;
 	IContestant team2;
 	IResult aResult;
-	
+
 	public Match(IContestant team1, IContestant team2, IResult aResult) {
 		this.team1 = team1;
 		this.team2 = team2;
@@ -11,10 +11,9 @@ public class Match {
 	}
 
 	public IContestant winner() {
-		if(aResult.isValid()) {
+		if (aResult.isValid()) {
 			return aResult.getWinner();
-		}
-		else {
+		} else {
 			return null;
 		}
 	}

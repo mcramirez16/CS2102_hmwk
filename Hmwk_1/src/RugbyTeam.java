@@ -1,6 +1,6 @@
 
-public class RugbyTeam implements IContestant{
-	
+public class RugbyTeam implements IContestant {
+
 	String country;
 	String jerseyColor;
 	boolean hasRitual;
@@ -16,15 +16,13 @@ public class RugbyTeam implements IContestant{
 	}
 
 	public boolean expectToBeat(RugbyTeam aTeam) {
-		
-		if(this.hasRitual == true && aTeam.hasRitual == false) {
+
+		if (this.hasRitual == true && aTeam.hasRitual == false) {
 			return true;
-		}
-		else if((this.wins - this.losses) > (aTeam.wins - aTeam.losses)) {
+		} else if ((this.wins - this.losses) > (aTeam.wins - aTeam.losses)) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
-		}	
+		}
 	}
 }
