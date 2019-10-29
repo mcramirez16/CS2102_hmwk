@@ -6,6 +6,7 @@ public class Examples {
 	
 	RugbyTeam rugbyteam1 = new RugbyTeam("UK","Blue",false,2,0);
 	RugbyTeam rugbyteam2 = new RugbyTeam("AU", "Yellow",true,1,1);
+	RugbyTeam rugbyteam3 = new RugbyTeam("Poland","White",false,4,1);
 	RoboticsTeam robotteam1 = new RoboticsTeam("APECHS","arm",4);
 	RoboticsTeam robotteam2 = new RoboticsTeam("OHS","climber",2);
 	
@@ -120,5 +121,29 @@ public class Examples {
 		assertEquals(invalidRobotMatch.winner(),null);
 	}
 	
+	//expectToBeat() Tests
+	public void expectToBeatRugbyTest1() {
+		assertTrue(rugbyteam2.expectToBeat(rugbyteam1));
+	}
 	
+	@Test
+	public void expectToBeatRugbyTest2() {
+		
+		assertTrue(rugbyteam3.expectToBeat(rugbyteam1));
+	}
+	
+	@Test
+	public void expectToBeatRugbyTest3() {
+		assertTrue(rugbyteam2.expectToBeat(rugbyteam3));
+	}
+	
+	@Test
+	public void expectToBeatRobotTest1() {
+		assertTrue(robotteam1.expectToBeat(robotteam2));
+	}
+	
+	@Test
+	public void expectToBeatRobotTest2() {
+		assertFalse(robotteam2.expectToBeat(robotteam1));
+	}
 }
