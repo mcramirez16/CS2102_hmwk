@@ -10,6 +10,9 @@ public abstract class AbsRound {
 	
 	public LinkedList<IContestant> getMatchWinners() {
 		LinkedList<IContestant> winners = new LinkedList<IContestant>();
+		for(int i=0;i<matches.size();i++) {
+			winners.add(matches.get(i).winner());
+		}
 		return winners;
 	}
 	
