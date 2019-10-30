@@ -18,6 +18,8 @@ public abstract class AbsRound {
 	
 	public int getNumWinners() {
 		int numWinners = 0;
+		LinkedList<IContestant> winners = getMatchWinners();
+		numWinners = winners.size();
 		return numWinners;
 	}
 
