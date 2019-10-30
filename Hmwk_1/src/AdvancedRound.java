@@ -6,6 +6,7 @@ public class AdvancedRound extends AbsRound implements IWinner {
 
 	AdvancedRound(LinkedList<Match> matches, LinkedList<IContestant> contestants) {
 		super(matches);
+		this.contestants = contestants;
 		// TODO Auto-generated constructor stub
 	}
 
