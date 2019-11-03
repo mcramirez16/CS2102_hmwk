@@ -2,18 +2,17 @@ import java.util.LinkedList;
 
 public class AdvancedRound extends AbsRound implements IWinner {
 	
-	LinkedList<IContestant> contestants;
+	LinkedList<IContestant> previousWinners;
 
 	AdvancedRound(LinkedList<Match> matches, LinkedList<IContestant> contestants) {
 		super(matches);
-		this.contestants = contestants;
+		this.previousWinners = contestants;
 	}
 	
 
 	public boolean isWinner(IContestant aCont) {
-		LinkedList<IContestant> winners = this.getMatchWinners();
-		for(int i = 0; i<winners.size();i++) {
-			if(winners.get(i)==aCont) {
+		for(int i = 0; i<previousWinners.size();i++) {
+			if(previousWinners.get(i)==aCont) {
 				return true;
 			}
 		}
