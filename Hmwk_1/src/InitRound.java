@@ -7,4 +7,10 @@ public class InitRound extends AbsRound implements IWinner {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public boolean isWinner(IContestant aCont) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

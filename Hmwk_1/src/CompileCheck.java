@@ -28,7 +28,7 @@ public class CompileCheck {
     
     InitRound iRound = new InitRound(new LinkedList<Match>());
     AdvancedRound aRound = new AdvancedRound(new LinkedList<Match>(), new LinkedList<IContestant>());
-    Tournament tnmt = new Tournament(new LinkedList<AbsRound>());
+    Tournament tnmt = new Tournament(new LinkedList<IWinner>());
     
     // Try calling all methods
     

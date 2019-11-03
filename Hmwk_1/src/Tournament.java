@@ -2,8 +2,12 @@ import java.util.LinkedList;
 
 public class Tournament {
 
-	LinkedList<AbsRound> rounds;
-	public Tournament(LinkedList<AbsRound> rounds) {
+	LinkedList<IWinner> rounds;
+	public Tournament(LinkedList<IWinner> rounds) {
 		this.rounds = rounds;
+	}
+	
+	public boolean finalWinnerIsValid(IContestant team) {
+		return false;
 	}
 }

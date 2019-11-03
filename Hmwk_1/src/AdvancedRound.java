@@ -8,8 +8,16 @@ public class AdvancedRound extends AbsRound implements IWinner {
 		super(matches);
 		this.contestants = contestants;
 	}
+	
 
 	public boolean isWinner(IContestant aCont) {
-		if()
+		LinkedList<IContestant> winners = this.getMatchWinners();
+		for(int i = 0; i<winners.size();i++) {
+			if(winners.get(i)==aCont) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }
