@@ -9,7 +9,11 @@ public class InitRound extends AbsRound implements IWinner {
 
 	@Override
 	public boolean isWinner(IContestant aCont) {
-		// TODO Auto-generated method stub
+		for(int i = 0; i<matches.size();i++) {
+			if(matches.get(i).winner().equals(aCont)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
