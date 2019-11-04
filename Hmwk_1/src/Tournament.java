@@ -9,10 +9,20 @@ public class Tournament {
 	}
 
 	public boolean finalWinnerIsValid(IContestant team) {
-		for(int i = 0; i<rounds.size();i++) {
-			//if(rounds.get(i).isWinner(team).equals(team)) {
-	}
-}
-	
+		int winCount = 0;
 
+		for (int i = 0; i < rounds.size(); i++) {
+			if (rounds.get(i).isWinner(team)) {
+				winCount += 1;
+			}
+		}
+
+		if (winCount > (rounds.size() / 2)) {
+
+			return true;
+		} else {
+			return false;
+		}
+
+	}
 }
