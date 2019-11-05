@@ -9,7 +9,11 @@ public class AdvancedRound extends AbsRound implements IWinner {
 		this.previousWinners = contestants;
 	}
 	
-
+	/**
+	 * Determines if the contestant won any previous rounds
+	 * @param aCont
+	 * @return boolean true if the contestant won at least one round previously
+	 */
 	public boolean isWinner(IContestant aCont) {
 		for(int i = 0; i<previousWinners.size();i++) {
 			if(previousWinners.get(i)==aCont) {

@@ -8,6 +8,11 @@ public class Tournament {
 		this.rounds = rounds;
 	}
 
+	/**
+	 * Determines if the contestant is the champion of the tournament
+	 * @param team
+	 * @return boolean true if contestant won more than half of the rounds
+	 */
 	public boolean finalWinnerIsValid(IContestant team) {
 		int winCount = 0;
 

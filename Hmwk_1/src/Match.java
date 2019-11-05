@@ -10,6 +10,10 @@ public class Match {
 		this.aResult = aResult;
 	}
 
+	/**
+	 * Get winner of the match
+	 * @return A valid winner or null if not valid
+	 */
 	public IContestant winner() {
 		if (aResult.isValid()) {
 			return aResult.getWinner();
