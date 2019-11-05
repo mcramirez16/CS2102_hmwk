@@ -36,12 +36,25 @@ public class Examples {
 	LinkedList<Match> rugbySeedingMatches= new LinkedList<Match>();
 	LinkedList<Match> robotSeedingMatches = new LinkedList<Match>();
 	
+	InitRound rugbyRound1 = new InitRound(rugbySeedingMatches);
+	InitRound robotRound1 = new InitRound(robotSeedingMatches);
+	
+	LinkedList<Match> rugbyFinalMatches = new LinkedList<Match>();
+	LinkedList<Match> robotFinalMatches = new LinkedList<Match>();
+	
+	LinkedList<IContestant> rugbyFinalContestants = new LinkedList<IContestant>();
+	LinkedList<IContestant> robotFinalContestants = new LinkedList<IContestant>();
+	
+	AdvancedRound rugbyFinals = new AdvancedRound(rugbyFinalMatches, rugbyFinalContestants);
+	AdvancedRound robotFinals = new AdvancedRound(robotFinalMatches, robotFinalContestants);
+	
+	Tournament tournament = new Tournament(new LinkedList<IWinner>());
+	
 	@Test
-	public void getMatchWinnersTest() {
+	public void getMatchWinnersRugbySeedingTest() {
 		rugbySeedingMatches.add(validRugbyMatch);
 		rugbySeedingMatches.add(validRugbyMatch2);
 		rugbySeedingMatches.add(validRugbyMatch3);
-		InitRound rugbyRound1 = new InitRound(rugbySeedingMatches);
 		LinkedList<IContestant> rugbySeedingWinners = rugbyRound1.getMatchWinners();
 		
 		LinkedList<IContestant> rugbyExpectedWinners = new LinkedList<IContestant>();
@@ -52,6 +65,8 @@ public class Examples {
 		assertEquals(rugbySeedingWinners,rugbyExpectedWinners);
 		
 	}
+	
+
 	
 
 	
