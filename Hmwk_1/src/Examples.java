@@ -94,6 +94,32 @@ public class Examples {
 
 		assertEquals(numWinners, 3);
 	}
+	
+	@Test
+	public void getMatchWinnersRobotSeedingTest() {
+		robotSeedingMatches.add(validRobotMatch);
+		robotSeedingMatches.add(validRobotMatch2);
+		robotSeedingMatches.add(validRobotMatch3);
+		LinkedList<IContestant> robotSeedingWinners = robotRound1.getMatchWinners();
+
+		LinkedList<IContestant> robotExpectedWinners = new LinkedList<IContestant>();
+		robotExpectedWinners.add(robotteam2);
+		robotExpectedWinners.add(robotteam3);
+		robotExpectedWinners.add(robotteam3);
+
+		assertEquals(robotSeedingWinners, robotExpectedWinners);
+	}
+	
+	@Test
+	public void getMatchNumWinnersRobotSeedingTest() {
+		robotSeedingMatches.add(validRobotMatch);
+		robotSeedingMatches.add(validRobotMatch2);
+		robotSeedingMatches.add(validRobotMatch3);
+
+		int numWinners = robotRound1.getNumWinners();
+
+		assertEquals(numWinners, 3);
+	}
 
 	@Test
 	public void isWinnerRugbyAdvancedRdTest1() {
