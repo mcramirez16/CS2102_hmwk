@@ -2,16 +2,16 @@ import java.util.LinkedList;
 
 public class InitRound extends AbsRound implements IWinner {
 
+	/**
+	 * Inital round constructor
+	 * @param matches List of matches in inital round
+	 */
 	InitRound(LinkedList<Match> matches) {
 		super(matches);
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * Determines if contestant won at least one match
-	 * @param aCont
-	 * @return boolean true if contestant won a match
-	 */
+	
 	@Override
 	public boolean isWinner(IContestant aCont) {
 		for(int i = 0; i<matches.size();i++) {

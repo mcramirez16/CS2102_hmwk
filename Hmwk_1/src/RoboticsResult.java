@@ -9,6 +9,17 @@ public class RoboticsResult implements IResult {
 	boolean team1fell;
 	boolean team2fell;
 
+	/**
+	 * Instantiates a RoboticsResult
+	 * @param team1 First RoboticsTeam
+	 * @param team2 Second RoboticsTeam
+	 * @param team1pts Double, amount of points for team 1
+	 * @param team1tasks int, number of tasks completed
+	 * @param team1fell Boolean, True if robot 1 fell during match
+	 * @param team2pts Double, amount of points for team 2
+	 * @param team2tasks int, number of tasks completed
+	 * @param team2fell Boolean, True if robot 2 fell during match
+	 */
 	public RoboticsResult(RoboticsTeam team1, RoboticsTeam team2, Double team1pts, int team1tasks, boolean team1fell,
 			Double team2pts, int team2tasks, boolean team2fell) {
 		this.team1 = team1;

@@ -7,6 +7,14 @@ public class RugbyTeam implements IContestant {
 	int wins;
 	int losses;
 
+	/**
+	 * Instantiates a RugbyTeam
+	 * @param country String of country name
+	 * @param jerseyColor String of jersey color
+	 * @param hasRitual Boolean, True if team has a haka
+	 * @param wins int, Number of previous wins
+	 * @param losses int, Number of previous loses
+	 */
 	public RugbyTeam(String country, String jerseyColor, boolean hasRitual, int wins, int losses) {
 		this.country = country;
 		this.jerseyColor = jerseyColor;

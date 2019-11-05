@@ -4,7 +4,13 @@ public class RoboticsTeam implements IContestant {
 	String school;
 	String specialFeat;
 	int preScore;
-
+	
+	/**
+	 * Instantiates a RoboticsTeam
+	 * @param school String of school name
+	 * @param specialFeat String of robot feature
+	 * @param preScore int, Score from previous competition
+	 */
 	public RoboticsTeam(String school, String specialFeat, int preScore) {
 		this.school = school;
 		this.specialFeat = specialFeat;
