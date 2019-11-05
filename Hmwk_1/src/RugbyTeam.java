@@ -16,9 +16,9 @@ public class RugbyTeam implements IContestant {
 	}
 
 	/**
-	 * 
+	 * Determines if this team is expected to beat another team
 	 * @param aTeam
-	 * @return
+	 * @return boolean true if this team is expected to win
 	 */
 	public boolean expectToBeat(RugbyTeam aTeam) {
 

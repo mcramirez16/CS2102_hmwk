@@ -11,6 +11,11 @@ public class RoboticsTeam implements IContestant {
 		this.preScore = preScore;
 	}
 
+	/**
+	 * Determines if this team is expected to beat another team
+	 * @param aTeam
+	 * @return boolean true if this team is expected to win
+	 */
 	public boolean expectToBeat(RoboticsTeam aTeam) {
 		if (this.preScore > aTeam.preScore)
 			return true;
