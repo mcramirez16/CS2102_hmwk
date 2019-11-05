@@ -15,6 +15,11 @@ public class RugbyTeam implements IContestant {
 		this.losses = losses;
 	}
 
+	/**
+	 * 
+	 * @param aTeam
+	 * @return
+	 */
 	public boolean expectToBeat(RugbyTeam aTeam) {
 
 		if (this.hasRitual == true && aTeam.hasRitual == false) {
