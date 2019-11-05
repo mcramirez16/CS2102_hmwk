@@ -13,6 +13,10 @@ public class RugbyResult implements IResult {
 		this.team2pts = team2pts;
 	}
 
+	/**
+	 * Determines if the points and tasks are within bounds of a reasonable result
+	 * @return boolean true if the result is reasonable
+	 */
 	public boolean isValid() {
 		if (this.team1pts < 150 && this.team2pts < 150) {
 			return true;
@@ -21,6 +25,10 @@ public class RugbyResult implements IResult {
 		}
 	}
 
+	/**
+	 * Determines which team won the match
+	 * @return IContestant The team that won the match
+	 */
 	@Override
 	public IContestant getWinner() {
 		IContestant winner;

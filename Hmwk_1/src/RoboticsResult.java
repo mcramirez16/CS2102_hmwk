@@ -20,7 +20,11 @@ public class RoboticsResult implements IResult {
 		this.team1fell = team1fell;
 		this.team2fell = team2fell;
 	}
-
+	
+	/**
+	 * Determines if the points and tasks are within bounds of a reasonable result
+	 * @return boolean true if the result is reasonable
+	 */
 	public boolean isValid() {
 		if (this.team1tasks < 8 && this.team2tasks < 8 && this.team1pts <= 16 && this.team2pts <= 16) {
 			return true;
@@ -29,6 +33,13 @@ public class RoboticsResult implements IResult {
 		}
 	}
 
+	/**
+	 * Calculates a score based on team performance in the match
+	 * @param teampts
+	 * @param teamtasks
+	 * @param teamfell
+	 * @return double Team's score for the match
+	 */
 	public double getScore(double teampts, int teamtasks, boolean teamfell) {
 
 		double score = teampts + teamtasks;
@@ -40,6 +51,10 @@ public class RoboticsResult implements IResult {
 		return score;
 	}
 
+	/**
+	 * Determines which team won the match
+	 * @return IContestant The team that won the match
+	 */
 	@Override
 	public IContestant getWinner() {
 		IContestant winner;
