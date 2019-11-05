@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public abstract class AbsRound {
 	
-	LinkedList<Match> matches;
+	LinkedList<Match> matches = new LinkedList<Match>();
 	
 	AbsRound(LinkedList<Match> matches){
 		this.matches = matches;
