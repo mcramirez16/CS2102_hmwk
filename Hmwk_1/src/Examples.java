@@ -66,6 +66,17 @@ public class Examples {
 		
 	}
 	
+	@Test
+	public void getMatchNumWinnersRugbySeedingTest() {
+		rugbySeedingMatches.add(validRugbyMatch);
+		rugbySeedingMatches.add(validRugbyMatch2);
+		rugbySeedingMatches.add(validRugbyMatch3);
+		
+		int numWinners = rugbyRound1.getNumWinners();
+		
+		assertEquals(numWinners,3);
+	}
+	
 
 	
 
