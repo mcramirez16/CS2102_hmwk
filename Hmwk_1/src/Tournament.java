@@ -22,7 +22,7 @@ public class Tournament {
 			}
 		}
 
-		if (winCount > (rounds.size() / 2)) {
+		if (winCount >= (rounds.size() / 2)) {
 
 			return true;
 		} else {
