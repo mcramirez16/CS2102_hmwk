@@ -4,6 +4,10 @@ public abstract class AbsRound {
 	
 	LinkedList<Match> matches;
 	
+	/**
+	 * Instantiates either an InitRound or AdvancedRound
+	 * @param matches List of matches in a round
+	 */
 	AbsRound(LinkedList<Match> matches){
 		this.matches = matches;
 	}

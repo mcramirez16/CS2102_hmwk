@@ -4,12 +4,13 @@ public class AdvancedRound extends AbsRound implements IWinner {
 	
 	LinkedList<IContestant> previousWinners;
 	
-	/*
-	 * Instantiates an AdvancedRound
-	 * @param matches List of matches in the advanced round
-	 * @param contestants List of previous winners
-	 */
-	AdvancedRound(LinkedList<Match> matches, LinkedList<IContestant> contestants) {
+;/*
+ * Instantiates an AdvancedRound
+ * @param matches List of matches in the advanced round
+ * @param contestants List of previous winners
+ */
+
+	public AdvancedRound(LinkedList<Match> matches, LinkedList<IContestant> contestants) {
 		super(matches);
 		this.previousWinners = contestants;
 	}

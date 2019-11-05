@@ -4,6 +4,10 @@ public class Tournament {
 
 	LinkedList<IWinner> rounds;
 
+	/**
+	 * Instantiates a Tournament
+	 * @param rounds List of rounds in tournament
+	 */
 	public Tournament(LinkedList<IWinner> rounds) {
 		this.rounds = rounds;
 	}

@@ -6,6 +6,13 @@ public class RugbyResult implements IResult {
 	Double team1pts;
 	Double team2pts;
 
+	/**
+	 * Instantiates a Rugby Result
+	 * @param team1 First RugbyTeam
+	 * @param team2 Second RugbyTeam
+	 * @param team1pts Double amount of points for team 1
+	 * @param team2pts Double amount of points for team 2
+	 */
 	public RugbyResult(RugbyTeam team1, RugbyTeam team2, Double team1pts, Double team2pts) {
 		this.team1 = team1;
 		this.team2 = team2;
