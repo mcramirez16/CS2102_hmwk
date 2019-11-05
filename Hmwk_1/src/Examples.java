@@ -77,9 +77,72 @@ public class Examples {
 		assertEquals(numWinners,3);
 	}
 	
-
+	@Test
+	public void isWinnerRugbyAdvancedRdTest1( ) {
+		rugbyFinalContestants.add(rugbyteam1);
+		rugbyFinalContestants.add(rugbyteam3);
+		
+		assertTrue(rugbyFinals.isWinner(rugbyteam3));
+	}
 	
-
+	@Test
+	public void isWinnerRugbyAdvancedRdTest2( ) {
+		rugbyFinalContestants.add(rugbyteam1);
+		rugbyFinalContestants.add(rugbyteam3);
+		
+		assertFalse(rugbyFinals.isWinner(rugbyteam2));
+	}
+	
+	@Test
+	public void isWinnerRobotAdvancedRdTest1( ) {
+		robotFinalContestants.add(robotteam1);
+		robotFinalContestants.add(robotteam3);
+		
+		assertTrue(robotFinals.isWinner(robotteam3));
+	}
+	
+	@Test
+	public void isWinnerRobotAdvancedRdTest2( ) {
+		robotFinalContestants.add(robotteam1);
+		robotFinalContestants.add(robotteam3);
+		
+		assertFalse(robotFinals.isWinner(robotteam2));
+	}
+	
+	
+	@Test
+	public void isWinnerRugbyInitRdTest1() {
+		rugbySeedingMatches.add(validRugbyMatch);
+		rugbySeedingMatches.add(validRugbyMatch2);
+		rugbySeedingMatches.add(validRugbyMatch3);
+		
+		assertTrue(rugbyRound1.isWinner(rugbyteam2));
+	}
+	
+	@Test
+	public void isWinnerRugbyInitRdTest2() {
+		rugbySeedingMatches.add(validRugbyMatch);
+		rugbySeedingMatches.add(validRugbyMatch2);
+		rugbySeedingMatches.add(validRugbyMatch3);
+		
+		assertFalse(rugbyRound1.isWinner(rugbyteam3));
+	}
+	
+	public void isWinnerRobotInitRdTest1() {
+		robotSeedingMatches.add(validRobotMatch);
+		robotSeedingMatches.add(validRobotMatch2);
+		robotSeedingMatches.add(validRobotMatch3);
+		
+		assertTrue(robotRound1.isWinner(robotteam3));
+	}
+	
+	public void isWinnerRobotInitRdTest2() {
+		robotSeedingMatches.add(validRobotMatch);
+		robotSeedingMatches.add(validRobotMatch2);
+		robotSeedingMatches.add(validRobotMatch3);
+		
+		assertFalse(robotRound1.isWinner(robotteam2));
+	}
 	
 	
 }

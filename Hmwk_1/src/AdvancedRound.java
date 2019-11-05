@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class AdvancedRound extends AbsRound implements IWinner {
 	
-	LinkedList<IContestant> previousWinners;
+	public LinkedList<IContestant> previousWinners;
 
 	AdvancedRound(LinkedList<Match> matches, LinkedList<IContestant> contestants) {
 		super(matches);
