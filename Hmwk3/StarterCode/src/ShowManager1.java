@@ -13,9 +13,9 @@ class ShowManager1 {
 		
 		LinkedList<ShowSummary> nonSpecials = new LinkedList<ShowSummary>();
 		
-		//for(int i = 0;i<shows.size();i++) {
-		//	if(shows.get(i).broad)
-		//}
+		for(int i = 0;i<shows.size();i++) {
+			
+		}
 		
 	}
 	
