@@ -6,7 +6,17 @@ class ShowManager1 {
 
 	public ShowSummary organizeShows(LinkedList<Show> shows)
 	{
-		return null;
+		LinkedList<String> order = new LinkedList<String>();
+		for(int i = 0; i<shows.size();i++) {
+			order.add(shows.get(i).title);
+		}
+		
+		LinkedList<ShowSummary> nonSpecials = new LinkedList<ShowSummary>();
+		
+		//for(int i = 0;i<shows.size();i++) {
+		//	if(shows.get(i).broad)
+		//}
+		
 	}
 	
 }
