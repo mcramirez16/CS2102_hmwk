@@ -27,7 +27,6 @@ class Earthquake1 {
 					else {
 						rightMonth = false;
 				}
-				
 			}
 			else {
 				if(rightMonth == true) {
