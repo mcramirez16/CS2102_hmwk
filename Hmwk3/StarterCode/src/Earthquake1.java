@@ -38,4 +38,5 @@ class Earthquake1 {
 			}
 		}
 	}
+		return dailyMaxForMonth;
 }
