@@ -38,5 +38,8 @@ class Earthquake1 {
 			}
 		}
 	}
+		
 		return DMFM;
+}
+
 }
