@@ -16,29 +16,37 @@ class Earthquake1 {
 
 	public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data, int month) {
 		
-		boolean rightMonth = true;
+		boolean rightMonth;
 		Double maxRead;
+		int counter;
 		LinkedList<MaxHzReport> DMFM = new LinkedList<MaxHzReport>();
 		
-		for(int i=0; i < data.size(); i++) {	
+		for(int i=0; i< data.size(); i++) {
 			if(isDate(data.get(i))) {
 				if(extractMonth(data.get(i)) == month) {
 					rightMonth = true;
-					else {
-						rightMonth = false;
+				} else {
+					rightMonth = false;
 				}
-			}
-			else {
+			} else {
 				if(rightMonth == true) {
-					if(data.get(i + 1) > data.get(i + 2)) {
-						DMFM.add(new MaxHzReport(data.get(i), data.get(i)));
+					counter = i+1;
+					maxRead = data.get(counter);
+					while(counter < data.size() && !isDate(data.get(counter))) {
+						if(maxRead < data.get(counter)) {
+							maxRead = data.get(counter);
+						}
+						counter++;
 					}
+					
+					DMFM.add(new MaxHzReport(data.get(i), maxRead));
+					
 				}
 			}
+			
 		}
-	}
 		
 		return DMFM;
-}
+	}
 
 }
