@@ -54,8 +54,7 @@ public class ShowExamples
 	
 	/*
 	 * Subtasks for Problem 1 (Solution 1):
-	 * Get order of shows by getting String of show name
-	 * Create separate list for new report
+	 * Go through shows in a loop
 	 * Determine if the show falls in daytime,primetime or latenight
 	 * Determine if the show is a special
 	 * Add to list if these requirements are met
@@ -64,9 +63,9 @@ public class ShowExamples
 	
 	/*
 	 * Subtasks for Problem 1 (Solution 2):
-	 * Go through each show in loop
-	 * If the show is not in daytime,primetime, or latenight skip it
-	 * Add to summary
+	 * Go through each and add each show in loop
+	 * If the show is not in daytime,primetime, or latenight remove it from the list
+	 * 
 	 * */
 
 }
