@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Hmwk_1/src"/>
+	<classpathentry kind="src" path="Hmwk3/StarterCode/src"/>
+	<classpathentry kind="output" path="Hmwk3/StarterCode/bin"/>
+</classpath>
