@@ -9,13 +9,20 @@ class ShowManager1 {
 		for(int i = 0; i<shows.size();i++) {
 			switch(timeShown(shows.get(i))) {
 			case 1 :
+				if(shows.get(i).isSpecial==false) {
 				newReport.daytime.add(shows.get(i));
+				}
 				break;
 			case 2 :
+				if(shows.get(i).isSpecial==false) {
 				newReport.primetime.add(shows.get(i));
+				}
 				break;
 			case 3 : 
+				if(shows.get(i).isSpecial==false) {
 				newReport.latenight.add(shows.get(i));
+				}
+				break;
 			}
 		}
 		
