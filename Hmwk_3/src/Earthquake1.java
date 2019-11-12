@@ -14,6 +14,12 @@ class Earthquake1 {
 		return ((int) dateNum % 10000) / 100;
 	}
 
+	/**
+	 * 
+	 * @param data
+	 * @param month
+	 * @return
+	 */
 	public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data, int month) {
 		
 		boolean rightMonth = false;
