@@ -25,14 +25,12 @@ class Earthquake2 {
 			}
 		}
 		
-		for(int i=0; i < data.size()-1; i++) {
-//			if(i+1 == data.size()) {
-//				
-//			}
+		for(int i=0; i < data.size(); i++) {
 			if(isDate(data.get(i))) {
 				maxData.add(new MaxHzReport(i, i+1));
 			}
 		}
+		
 //		System.out.println(maxData);
 		for(MaxHzReport aReport : maxData) {
 			if(extractMonth(aReport.date) != month) {
