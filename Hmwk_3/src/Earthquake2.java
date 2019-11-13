@@ -19,29 +19,29 @@ class Earthquake2 {
 		Double maxRead = 0.0;
 		LinkedList<MaxHzReport> maxData = new LinkedList<MaxHzReport>();
 		LinkedList<MaxHzReport> unwantedMaxData = new LinkedList<MaxHzReport>();
-		LinkedList<Double> testData = new LinkedList<Double>();
+		LinkedList<Double> trashData = new LinkedList<Double>();
 
 		for (double datum : data) {
 			if (!isDate(datum)) {
 				if (datum > maxRead) {
 					maxRead = datum;
 				} else {
-					testData.add(datum);
+					trashData.add(datum);
 				}
 			} else {
 				maxRead = 0.0;
 			}
 		}
 		
-		data.removeAll(testData);
+		data.removeAll(trashData);
 
 		for (int i = 0; i < data.size()-1; i++) {
 			if (isDate(data.get(i))) {
-				maxData.add(new MaxHzReport(i, i + 1));
+				maxData.add(new MaxHzReport(data.get(i), data.get(i+1)));
 			}
 		}
 
-//		System.out.println(maxData);
+
 		for (MaxHzReport aReport : maxData) {
 			if (extractMonth(aReport.date) != month) {
 				unwantedMaxData.add(aReport);
