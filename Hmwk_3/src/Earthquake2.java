@@ -55,6 +55,10 @@ class Earthquake2 {
 		for (double datum : data) {
 			if (!isDate(datum)) {
 				if (datum > maxRead) {
+					if(maxRead != 0.0) {
+						trashData.add(maxRead);
+					}
+					
 					maxRead = datum;
 				} else {
 					trashData.add(datum);

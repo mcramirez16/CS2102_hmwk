@@ -27,49 +27,41 @@ class Earthquake1 {
 
 		boolean rightMonth = false;
 		Double heldDate = 0.0;
+		Double maxRead = 0.0;
 		LinkedList<MaxHzReport> DMFM = new LinkedList<MaxHzReport>();
 
-		for (double datum : data) {
-			if (isDate(datum)) {
-				if (extractMonth(datum) == month) {
+		for (int i = 0; i < data.size(); i++) {
+			if (isDate(data.get(i))) {
+
+				maxRead = 0.0;
+
+				if (extractMonth(data.get(i)) == month) {
 					rightMonth = true;
-					heldDate = datum;
+					heldDate = data.get(i);
 				} else {
 					rightMonth = false;
 				}
+
 			} else {
 				if (rightMonth == true) {
 
-					DMFM.add(new MaxHzReport(heldDate, pickMaxReading(data)));
+					int counter = i + 1;
+
+					if (counter == data.size()) {
+						maxRead = data.get(i);
+						DMFM.add(new MaxHzReport(heldDate, maxRead));
+					} else {
+						if (data.get(counter) > data.get(i) && !isDate(data.get(counter))) {
+							maxRead = data.get(counter);
+							DMFM.add(new MaxHzReport(heldDate, maxRead));
+						}
+					}
 
 				}
 			}
 
 		}
 		return DMFM;
-	}
-
-
-	/**
-	 * Picks out the highest reading from a list of only seismic readings
-	 * @param data
-	 * @return the highest seismic reading
-	 */
-	public double pickMaxReading(LinkedList<Double> data) {
-		Double maxRead = 0.0;
-
-		for (int i = 0; i < data.size(); i++) {
-			int counter = i + 1;
-
-			if (counter == data.size()) {
-				maxRead = data.get(i);
-			} else {
-				if (data.get(counter) > data.get(i) && !isDate(data.get(counter))) {
-					maxRead = data.get(counter);
-				}
-			}
-		}
-		return maxRead;
 	}
 
 }
