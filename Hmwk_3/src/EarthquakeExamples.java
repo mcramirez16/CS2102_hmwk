@@ -74,5 +74,26 @@ public class EarthquakeExamples {
   public void Earthquake2Test3() {
 	  assertEquals(OctReports, E2.dailyMaxForMonth(goodDatesNotConsecutive, 10));
   }
+  
+  /**
+   * Subtasks for Earthquake1 (Solution 1):
+   * 
+   * CHECKING MONTH OF INTEREST
+   * STORE DATE OF INTEREST
+   * SKIPPING IRRELAVENT DATE AND ITS READINGS
+   * PICK OUT MAX SEISMIC READING OF THE STORED DATE
+   * GENARATE MAX HERZ REPORT
+   * MAKE A LIST OF MAX HERZ REPORT
+   * 
+   * 
+   * Subtasks for Earthquake2 (Solution 2):
+   * 
+   * IDENTIFY MAX READING FOR EACH DATE
+   * ELIMINATE NON MAX READINGS FOR EACH DATE
+   * GENERATE MAX HERZ REPORT FOR EACH DATE FROM CLEANED LIST
+   * MAKE A LIST OF THESE MAX HERZ REPORT
+   * CHECK MONTH OF INTEREST
+   * ELIMINATE OTHER MONTHS' MAX HERZ REPORTS
+   */
 
 }
