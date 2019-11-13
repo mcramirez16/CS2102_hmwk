@@ -26,6 +26,7 @@ class Earthquake1 {
 	public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data, int month) {
 
 		boolean rightMonth = false;
+		boolean willRepeat = false;
 		Double heldDate = 0.0;
 		Double maxRead = 0.0;
 		LinkedList<MaxHzReport> DMFM = new LinkedList<MaxHzReport>();
@@ -34,6 +35,7 @@ class Earthquake1 {
 			if (isDate(data.get(i))) {
 
 				maxRead = 0.0;
+				willRepeat = false;
 
 				if (extractMonth(data.get(i)) == month) {
 					rightMonth = true;
@@ -49,11 +51,14 @@ class Earthquake1 {
 
 					if (counter == data.size()) {
 						maxRead = data.get(i);
-						DMFM.add(new MaxHzReport(heldDate, maxRead));
+						if(willRepeat == false) {
+							DMFM.add(new MaxHzReport(heldDate, maxRead));
+						}
 					} else {
 						if (data.get(counter) > data.get(i) && !isDate(data.get(counter))) {
 							maxRead = data.get(counter);
 							DMFM.add(new MaxHzReport(heldDate, maxRead));
+							willRepeat = true;
 						}
 					}
 
