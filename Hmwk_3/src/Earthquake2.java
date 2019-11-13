@@ -16,9 +16,27 @@ class Earthquake2 {
 
 	public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data, int month) {
 
-		Double maxRead = 0.0;
 		LinkedList<MaxHzReport> maxData = new LinkedList<MaxHzReport>();
 		LinkedList<MaxHzReport> unwantedMaxData = new LinkedList<MaxHzReport>();
+
+		maxData = makeReportList(removeNonMaxReading(data));
+
+		for (MaxHzReport aReport : maxData) {
+			if (extractMonth(aReport.date) != month) {
+				unwantedMaxData.add(aReport);
+			}
+		}
+
+		maxData.removeAll(unwantedMaxData);
+
+		return maxData;
+
+	}
+	
+
+	public LinkedList<Double> removeNonMaxReading(LinkedList<Double> data) {
+		Double maxRead = 0.0;
+
 		LinkedList<Double> trashData = new LinkedList<Double>();
 
 		for (double datum : data) {
@@ -32,26 +50,24 @@ class Earthquake2 {
 				maxRead = 0.0;
 			}
 		}
-		
+
 		data.removeAll(trashData);
 
-		for (int i = 0; i < data.size()-1; i++) {
+		return data;
+	}
+	
+
+	public LinkedList<MaxHzReport> makeReportList(LinkedList<Double> data) {
+
+		LinkedList<MaxHzReport> maxData = new LinkedList<MaxHzReport>();
+
+		for (int i = 0; i < data.size() - 1; i++) {
 			if (isDate(data.get(i))) {
-				maxData.add(new MaxHzReport(data.get(i), data.get(i+1)));
+				maxData.add(new MaxHzReport(data.get(i), data.get(i + 1)));
 			}
 		}
-
-
-		for (MaxHzReport aReport : maxData) {
-			if (extractMonth(aReport.date) != month) {
-				unwantedMaxData.add(aReport);
-			}
-		}
-		
-		maxData.removeAll(unwantedMaxData);
 
 		return maxData;
-
 	}
 
 }
