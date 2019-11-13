@@ -10,6 +10,8 @@ public class ShowExamples
 	LinkedList<Show> shows = new LinkedList<Show>();
 	ShowSummary report1 = new ShowSummary();
 	LinkedList<Show> specialList1 = new LinkedList<Show>();
+	LinkedList<Show> lateList1 = new LinkedList<Show>();
+	LinkedList<Show> specialList2 = new LinkedList<Show>();
 	
 	public ShowExamples()
 	{
@@ -21,6 +23,8 @@ public class ShowExamples
 		shows.add(s1);
 		report1.primetime.add(s1);
 		specialList1.add(s1);
+		lateList1.add(s1);
+		specialList2.add(s1);
 		
 		LinkedList<Episode> eps2 = new LinkedList<Episode>();
 		eps2.add(new Episode("Fear of a Bot Planet", 23));
@@ -31,6 +35,8 @@ public class ShowExamples
 		shows.add(s2);
 		report1.primetime.add(s2);
 		specialList1.add(s2);
+		lateList1.add(s2);
+		specialList2.add(s2);
 		
 		LinkedList<Episode> eps3 = new LinkedList<Episode>();
 		eps3.add(new Episode("Yakko's World", 4));
@@ -40,11 +46,20 @@ public class ShowExamples
 		shows.add(s3);
 		report1.daytime.add(s3);
 		specialList1.add(s3);
+		lateList1.add(s3);
+		specialList2.add(s3);
 		
 		LinkedList<Episode> special1 = new LinkedList<Episode>();
 		special1.add(new Episode("Muppets Christmas Special",3));
 		Show sp1 = new Show("Muppets Christmas Special",2200,special1,true);
 		specialList1.add(sp1);
+		specialList2.add(sp1);
+		
+		LinkedList<Episode> lateShow = new LinkedList<Episode>();
+		lateShow.add(new Episode("JoJo's Bizarre Adventure",3));
+		Show ls1 = new Show("Muppets Christmas Special",200,lateShow,false);
+		lateList1.add(ls1);
+		specialList2.add(ls1);
 		
 		LinkedList<Episode> eps4 = new LinkedList<Episode>();
 		eps4.add(new Episode("The Letter W", 59));
@@ -54,6 +69,8 @@ public class ShowExamples
 		shows.add(s4);
 		report1.daytime.add(s4);
 		specialList1.add(s4);
+		lateList1.add(s4);
+		specialList2.add(s4);
 	}
 	
 	@Test
@@ -62,12 +79,42 @@ public class ShowExamples
 		ShowSummary report2 = sm1.organizeShows(shows);
 		assertEquals(report1, report2);
 	}
+	@Test
+	public void sm1_specialTest() {
+		ShowSummary report2 = sm1.organizeShows(specialList1);
+		assertEquals(report1,report2);
+	}
+	
 	
 	@Test
-	public void sm2_specialTest1() {
-		ShowSummary report3 = sm2.organizeShows(specialList1);
-		assertEquals(report1,report3);
+	public void sm2_specialTest() {
+		ShowSummary report2 = sm2.organizeShows(specialList1);
+		assertEquals(report1,report2);
 	}
+	
+	
+	@Test
+	public void sm1_lateTest() {
+		ShowSummary report2 = sm1.organizeShows(lateList1);
+		assertEquals(report1,report2);
+	}
+	
+	
+	@Test
+	public void sm2_lateTest() {
+		ShowSummary report2 = sm2.organizeShows(lateList1);
+		assertEquals(report1,report2);
+	}
+	
+	
+	
+	@Test
+	public void sm1_mixedTest() {
+		ShowSummary report2 = sm1.organizeShows(specialList2);
+		assertEquals(report1,report2);
+	}
+	
+	
 	
 	/*
 	 * Subtasks for Problem 1 (Solution 1):
