@@ -15,10 +15,13 @@ class Earthquake1 {
 	}
 
 	/**
-	 * 
+	 * From a list of daily seismic readings,
+	 * produces a list of reports indicating the 
+	 * highest frequency reading for each day in the interested month.
 	 * @param data
 	 * @param month
-	 * @return
+	 * @return a list of reports indicating the 
+	 * highest seismic reading for each day in the month.
 	 */
 	public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data, int month) {
 
@@ -46,7 +49,12 @@ class Earthquake1 {
 		return DMFM;
 	}
 
-	
+
+	/**
+	 * Picks out the highest reading from a list of only seismic readings
+	 * @param data
+	 * @return the highest seismic reading
+	 */
 	public double pickMaxReading(LinkedList<Double> data) {
 		Double maxRead = 0.0;
 
