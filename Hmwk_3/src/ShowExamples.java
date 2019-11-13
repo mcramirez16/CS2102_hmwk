@@ -6,8 +6,10 @@ import java.util.Arrays;
 public class ShowExamples 
 {
 	ShowManager1 sm1 = new ShowManager1();
+	ShowManager2 sm2= new ShowManager2();
 	LinkedList<Show> shows = new LinkedList<Show>();
 	ShowSummary report1 = new ShowSummary();
+	ShowSummary specialReport = new ShowSummary();
 	
 	public ShowExamples()
 	{
@@ -18,6 +20,7 @@ public class ShowExamples
 		Show s1 = new Show("Star Trek", 1800, eps1, false);
 		shows.add(s1);
 		report1.primetime.add(s1);
+		specialReport.primetime.add(s1);
 		
 		LinkedList<Episode> eps2 = new LinkedList<Episode>();
 		eps2.add(new Episode("Fear of a Bot Planet", 23));
@@ -27,6 +30,7 @@ public class ShowExamples
 		Show s2 = new Show("Futurama", 1900, eps2, false);
 		shows.add(s2);
 		report1.primetime.add(s2);
+		specialReport.primetime.add(s2);
 		
 		LinkedList<Episode> eps3 = new LinkedList<Episode>();
 		eps3.add(new Episode("Yakko's World", 4));
@@ -35,6 +39,12 @@ public class ShowExamples
 		Show s3 = new Show("Animaniacs", 1630, eps3, false);
 		shows.add(s3);
 		report1.daytime.add(s3);
+		specialReport.daytime.add(s3);
+		
+		LinkedList<Episode> special1 = new LinkedList<Episode>();
+		special1.add(new Episode("Muppets Christmas Special",3));
+		Show sp1 = new Show("Muppets Christmas Special",2200,special1,true);
+		specialReport.latenight.add(sp1);
 		
 		LinkedList<Episode> eps4 = new LinkedList<Episode>();
 		eps4.add(new Episode("The Letter W", 59));
@@ -50,6 +60,12 @@ public class ShowExamples
 	{
 		ShowSummary report2 = sm1.organizeShows(shows);
 		assertEquals(report1, report2);
+	}
+	
+	@Test
+	public void sm2_instructorTest() {
+		ShowSummary report3 = sm2.organizeShows(shows);
+		assertEquals(report1,report3);
 	}
 	
 	/*

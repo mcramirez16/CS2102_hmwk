@@ -21,8 +21,9 @@ class ShowManager2 {
 			}
 		}
 		
+		removeSpecials(newReport);
 		
-		return null;
+		return newReport;
 	}
 	
 	public int timeShown(Show show) {
