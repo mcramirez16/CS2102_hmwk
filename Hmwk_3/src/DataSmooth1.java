@@ -2,7 +2,11 @@ import java.util.LinkedList;
 
 class DataSmooth1 {
   DataSmooth1(){}
-  
+  /**
+   * Creates a list of average runtime of each show
+   * @param List of shows
+   * @return List of doubles of average runtime per show
+   */
   public LinkedList<Double> dataSmooth(LinkedList<Show> shows) 
   {
 	  LinkedList<Double> avgs = new LinkedList<Double>();

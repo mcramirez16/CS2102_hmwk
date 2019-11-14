@@ -4,6 +4,11 @@ class ShowManager1 {
 	
 	ShowManager1() {}
 
+	/**
+	 * Creates a ShowSummary containing only non-specials within a certain broadcast time
+	 * @param List of shows
+	 * @return ShowSummary
+	 */
 	public ShowSummary organizeShows(LinkedList<Show> shows){
 		ShowSummary newReport = new ShowSummary();
 		for(int i = 0; i<shows.size();i++) {
@@ -30,7 +35,11 @@ class ShowManager1 {
 	}
 	
 
-
+/**
+ * Determines what slot a show airs on based on broadcast time
+ * @param show
+ * @return int slot
+ */
 public int timeShown(Show show) {
 	int slot = 0;
 	if(show.broadcastTime > 600 && show.broadcastTime < 1700 ) {
