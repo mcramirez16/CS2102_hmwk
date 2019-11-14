@@ -5,6 +5,16 @@ class DataSmooth1 {
   
   public LinkedList<Double> dataSmooth(LinkedList<Show> shows) 
   {
-	  return null;
+	  LinkedList<Double> avgs = new LinkedList<Double>();
+	 
+	  for(Show s: shows) {
+		  Double sum = 0.0;
+		  for (Episode e: s.episodes) {
+			 sum += e.runTime; 
+		  }
+		  avgs.add(sum/s.episodes.size());
+	  }
+	  
+	  return avgs;
   }
 }

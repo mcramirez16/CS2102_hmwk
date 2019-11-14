@@ -7,6 +7,7 @@ public class DataSmoothExamples
   LinkedList<Show> shows = new LinkedList<Show>();
   LinkedList<Double> showResults = new LinkedList<Double>();
   DataSmooth1 D1 = new DataSmooth1();
+  DataSmooth2 D2 = new DataSmooth2();
   
   public DataSmoothExamples() 
   {
@@ -36,8 +37,8 @@ public class DataSmoothExamples
 		shows.add(new Show("Sesame Street", 900, eps4, false));
 
 	    showResults.add(60.0);
-	    showResults.add(29.75);
-	    showResults.add(29.08333);
+	    showResults.add(22.25);
+	    showResults.add(7.0);
 	    showResults.add(58.0);
   }
   
@@ -52,4 +53,32 @@ public class DataSmoothExamples
 	  }
   }
   
+  @Test
+  public void instructorTestDS2() 
+  {
+	  LinkedList<Double> runtimes = D2.dataSmooth(shows);
+	  
+	  for(int i = 0; i < runtimes.size(); i++)
+	  {
+		  assertEquals(runtimes.get(i), showResults.get(i), .01);
+	  }
+  }
+  
+  /*
+	 * Subtasks for Problem 2 (Solution 1):
+	 * Loop through each show in the list
+	 * Use another loop to get each episode's runtime and add it to a sum
+	 * Divide sum by size of episode list
+	 * Add average runtime of that show to the final list
+	 * */
+	
+	/*
+	 * Subtasks for Problem 2 (Solution 2):
+	 * Add all the runtimes to a list of data
+	 * Make a list of integers that are the indices to split the data after each show
+	 * Go through the data summing each number until reaching the index indicating a different show
+	 * Average the sum and add to the list of averages
+	 * Keep going through the data until finished making the list of averages
+	 * 
+	 * */
 }
