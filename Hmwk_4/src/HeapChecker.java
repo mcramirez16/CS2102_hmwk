@@ -10,11 +10,6 @@ public class HeapChecker {
 
 	  }
 	
-	boolean remMinEltTester(IHeap hOrig, IBinTree hRemoved) {
-		return false;
-
-
-	  }
 }
 
 
