@@ -12,12 +12,6 @@ interface IHeap extends IBinTree {
  
  // Determine if the root of this heap is bigger than the given element
  boolean isBigger(int e);
- 
- int getNode();
- 
- IBinTree getLeft();
- 
- IBinTree getRight();
 }
 
 class MtHeap extends MtBT implements IHeap {
@@ -46,24 +40,6 @@ class MtHeap extends MtBT implements IHeap {
  public IHeap merge(IHeap withHeap) {
   return withHeap;
  }
-
-@Override
-public int getNode() {
-	// TODO Auto-generated method stub
-	return 0;
-}
-
-@Override
-public IBinTree getLeft() {
-	// TODO Auto-generated method stub
-	return new MtHeap();
-}
-
-@Override
-public IBinTree getRight() {
-	// TODO Auto-generated method stub
-	return new MtHeap();
-}
 }
 
 class DataHeap extends DataBT implements IHeap {
@@ -152,17 +128,5 @@ class DataHeap extends DataBT implements IHeap {
  @Override
  public boolean isBigger(int e) {
   return (this.data >= e);
- }
- 
- public int getNode() {
-	 return this.data;
- }
- 
- public IBinTree getLeft() {
-	 return this.left;
- }
- 
- public IBinTree getRight() {
-	 return this.right;
  }
 }

@@ -7,6 +7,12 @@ interface IBinTree {
  int size();
  // returns depth of longest branch in the tree
  int height();
+ 
+ int getNode();
+ 
+ IBinTree getLeft();
+ 
+ IBinTree getRight();
 }
 
 class MtBT implements IBinTree {
@@ -26,6 +32,24 @@ class MtBT implements IBinTree {
  public int height() {
   return 0;
  }
+
+@Override
+public int getNode() {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public IBinTree getLeft() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public IBinTree getRight() {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
 
 class DataBT implements IBinTree {
@@ -60,4 +84,22 @@ class DataBT implements IBinTree {
  public int height() {
   return 1 + Math.max(this.left.height(), this.right.height());
  }
+
+@Override
+public int getNode() {
+	// TODO Auto-generated method stub
+	return this.data;
+}
+
+@Override
+public IBinTree getLeft() {
+	// TODO Auto-generated method stub
+	return this.left;
+}
+
+@Override
+public IBinTree getRight() {
+	// TODO Auto-generated method stub
+	return this.right;
+}
 }
