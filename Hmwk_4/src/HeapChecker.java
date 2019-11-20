@@ -9,9 +9,19 @@ public class HeapChecker {
 	  }
 	
 	public boolean isHeap(IBinTree aBT) {// determines if a binary tree is a heap
+		int currentNode = aBT.getNode();
 		
+		if(currentNode == 0) {
+			return false;//returns false when the BT is empty;
+		}
+		else {
+			if(currentNode < aBT.getLeft().getNode() && currentNode < aBT.getRight().getNode()) {
+				return true;
+				
+			}
+		}
 	}
-	
+
 	public LinkedList<Integer> heapToList(IHeap aHP) {// converts a heap to a linked list
 		
 	}
