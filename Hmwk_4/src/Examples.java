@@ -10,6 +10,9 @@ public class Examples {
 	IHeap left1 = new TestHeap(3,new MtHeap(),new MtHeap());
 	IHeap right1 = new TestHeap(5,new MtHeap(),new MtHeap());
 	TestHeap heap1 = new TestHeap(2, left1, right1);
+	IBinTree tree1 = new DataBT(1,new MtBT(),new MtBT());
+	IBinTree leftBT = new DataBT(2,new MtBT(),new MtBT());
+	IBinTree rightBT = new DataBT(3,new MtBT(),new MtBT());
 	
 	@Test
 	public void getNodeTest() {
@@ -26,6 +29,6 @@ public class Examples {
 		assertEquals(HT2.right(heap1),right1);
 	}
 	
-	IBinTree left2BT = new DataBT()
+	
 
 }
