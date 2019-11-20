@@ -48,4 +48,30 @@ public IBinTree getRight() {
 	// TODO Auto-generated method stub
 	return this.right;
 }
+
+@Override
+public boolean isHeap() {// determines if a binary tree is a heap
+	boolean updateBool = false;
+	
+	if(this.getNode() == 0) {
+		updateBool = true;//returns false when the BT is empty;
+	}
+	else {
+		if(this.getNode() < this.getLeft().getNode()) {
+			updateBool = true;
+			if(this.getLeft().isHeap()) {
+				if(this.getNode() < this.getRight().getNode()) {
+					updateBool = true;
+					if(this.getRight().isHeap()) {
+						updateBool = true;
+					} else {
+						updateBool = false;
+					}
+				}
+			}
+			
+		}
+	}
+	return updateBool;
+}
 }

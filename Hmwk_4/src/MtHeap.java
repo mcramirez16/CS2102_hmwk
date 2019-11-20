@@ -26,12 +26,6 @@ public class MtHeap extends MtBT implements IHeap {
  public IHeap merge(IHeap withHeap) {
   return withHeap;
  }
-
-@Override
-public boolean isHeap(IBinTree aBT) {
-	// TODO Auto-generated method stub
-	return true;
-}
 }
 
 

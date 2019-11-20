@@ -33,5 +33,13 @@ public IBinTree getRight() {
 	// TODO Auto-generated method stub
 	return null;
 }
+
+@Override
+public boolean isHeap() {
+	// TODO Auto-generated method stub
+	return true;
+}
+
+
 }
 

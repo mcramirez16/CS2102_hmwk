@@ -32,12 +32,12 @@ public class Examples {
 	
 	@Test
 	public void isHeapTest() {
-		assertTrue(HT.isHeap(treeHeap));
+		assertTrue(treeHeap.isHeap());
 	}
 	
 	@Test
 	public void isNotHeapTest() {
-		assertFalse(HT.isHeap(treeNotHeap));
+		assertFalse(treeNotHeap.isHeap());
 	}
 	
 	
