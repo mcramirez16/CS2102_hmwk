@@ -17,17 +17,17 @@ public class Examples {
 	
 	@Test
 	public void getNodeTest() {
-		assertEquals(HT2.node(heap1),2);
+		assertEquals(heap1.getNode(),2);
 	}
 	
 	@Test
 	public void getLeftTest() {
-		assertEquals(HT2.left(heap1),left1);
+		assertEquals(heap1.getLeft(),left1);
 	}
 	
 	@Test
 	public void getRightTest() {
-		assertEquals(HT2.right(heap1),right1);
+		assertEquals(heap1.getRight(),right1);
 	}
 	
 	@Test
