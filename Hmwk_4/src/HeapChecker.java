@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 
 public class HeapChecker {
 
@@ -20,13 +21,16 @@ public class HeapChecker {
 				
 			}
 		}
+		return false;
 	}
 
-	public LinkedList<Integer> heapToList(IHeap aHP) {// converts a heap to a linked list
+	public LinkedList<Integer> heapToList(IHeap aHP) {
+		return null;// converts a heap to a linked list
 		
 	}
 	
-	public LinkedList<Integer> btToList(IBinTree aBT){// converts a binary tree to a list
+	public LinkedList<Integer> btToList(IBinTree aBT){
+		return null;// converts a binary tree to a list
 		
 	}
 	
@@ -34,6 +38,7 @@ public class HeapChecker {
 		//are the same and have the same number of occurrences except the added term
 		int origCounter = 0;
 		int addedCounter = 0;
+		return false;
 	}
 }
 
