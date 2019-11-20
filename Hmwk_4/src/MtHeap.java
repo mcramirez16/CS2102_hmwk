@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class MtHeap extends MtBT implements IHeap {
+public class MtHeap extends MtBT implements IHeap {
  MtHeap(){}
 
  @Override

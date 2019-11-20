@@ -1,4 +1,4 @@
-class DataBT implements IBinTree {
+public class DataBT implements IBinTree {
  int data;
  IBinTree left;
  IBinTree right;

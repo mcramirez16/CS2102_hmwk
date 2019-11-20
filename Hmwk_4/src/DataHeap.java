@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class DataHeap extends DataBT implements IHeap {
+public class DataHeap extends DataBT implements IHeap {
  IHeap left;
  IHeap right;
 
