@@ -87,4 +87,30 @@ public class DataHeap extends DataBT implements IHeap {
  public boolean isBigger(int e) {
   return (this.data >= e);
  }
+
+@Override
+public boolean isHeap(IBinTree aBT) {// determines if a binary tree is a heap
+	boolean updateBool = false;
+	
+	if(aBT.getNode() == 0) {
+		updateBool = true;//returns false when the BT is empty;
+	}
+	else {
+		if(aBT.getNode() < aBT.getLeft().getNode()) {
+			updateBool = true;
+			if(isHeap(aBT.getLeft())) {
+				if(aBT.getNode() < aBT.getRight().getNode()) {
+					updateBool = true;
+					if(isHeap(aBT.getRight())) {
+						updateBool = true;
+					} else {
+						updateBool = false;
+					}
+				}
+			}
+			
+		}
+	}
+	return updateBool;
+}
 }
