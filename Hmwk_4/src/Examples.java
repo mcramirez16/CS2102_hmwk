@@ -9,7 +9,7 @@ public class Examples {
 	
 	IHeap left1 = new TestHeap(3,new MtHeap(),new MtHeap());
 	IHeap right1 = new TestHeap(5,new MtHeap(),new MtHeap());
-	TestHeap heap1 = new TestHeap(2, left1, right1);
+	IHeap heap1 = new TestHeap(2, left1, right1);
 	IBinTree leftBT = new DataBT(2,new MtBT(),new MtBT());
 	IBinTree rightBT = new DataBT(3,new MtBT(),new MtBT());
 	IBinTree treeHeap = new DataBT(1,leftBT,rightBT);
@@ -40,6 +40,12 @@ public class Examples {
 		assertFalse(treeNotHeap.isHeap());
 	}
 	
+	@Test
+	public void expectedValues() {
+		IBinTree heap2 = heap1.remMinElt();
+		assertTrue(HT2.expectedValues(heap1, heap2));
+		
+	}
 	
 
 }

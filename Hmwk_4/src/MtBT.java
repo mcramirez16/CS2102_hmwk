@@ -17,6 +17,12 @@ class MtBT implements IBinTree {
  }
 
 @Override
+public boolean isHeap() {
+	// TODO Auto-generated method stub
+	return true;
+}
+
+@Override
 public int getNode() {
 	// TODO Auto-generated method stub
 	return 0;
@@ -32,12 +38,6 @@ public IBinTree getLeft() {
 public IBinTree getRight() {
 	// TODO Auto-generated method stub
 	return null;
-}
-
-@Override
-public boolean isHeap() {
-	// TODO Auto-generated method stub
-	return true;
 }
 
 
