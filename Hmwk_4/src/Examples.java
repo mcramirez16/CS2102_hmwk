@@ -25,5 +25,7 @@ public class Examples {
 	public void getRightTest() {
 		assertEquals(HT2.right(heap1),right1);
 	}
+	
+	IBinTree left2BT = new DataBT()
 
 }

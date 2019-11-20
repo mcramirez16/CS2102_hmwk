@@ -1,4 +1,4 @@
-public class MtBT implements IBinTree {
+class MtBT implements IBinTree {
  MtBT(){}
 
  // returns false since empty tree has no elements

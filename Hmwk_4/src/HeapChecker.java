@@ -10,18 +10,28 @@ public class HeapChecker {
 	  }
 	
 	public boolean isHeap(IBinTree aBT) {// determines if a binary tree is a heap
-		int currentNode = aBT.getNode();
+		boolean updateBool = false;
 		
-		if(currentNode == 0) {
-			return false;//returns false when the BT is empty;
+		if(aBT.getNode() == 0) {
+			updateBool = true;//returns false when the BT is empty;
 		}
 		else {
-			if(currentNode < aBT.getLeft().getNode() && currentNode < aBT.getRight().getNode()) {
-				return true;
+			if(aBT.getNode() < aBT.getLeft().getNode()) {
+				updateBool = true;
+				if(isHeap(aBT.getLeft())) {
+					if(aBT.getNode() < aBT.getRight().getNode()) {
+						updateBool = true;
+						if(isHeap(aBT.getRight())) {
+							updateBool = true;
+						} else {
+							updateBool = false;
+						}
+					}
+				}
 				
 			}
 		}
-		return false;
+		return updateBool;
 	}
 
 	public LinkedList<Integer> heapToList(IHeap aHP) {
