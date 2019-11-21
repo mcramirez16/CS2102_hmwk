@@ -5,9 +5,11 @@ public class HeapChecker {
 	LinkedList<Integer> abtEltList = new LinkedList<Integer>();
 
 	public boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
-		return false;
-
-		   
+		if(hAdded.isHeap() != true) {
+			return false;
+		} else {
+			
+		}
 
 	  }
 	
@@ -24,10 +26,11 @@ public class HeapChecker {
 		return abtEltList;
 	}
 	
-	public boolean containSameElts(LinkedList<Integer> lOrig, LinkedList<Integer> lAdded) {// checks if the elements
+	public boolean containSameEltsForAddEltTester(LinkedList<Integer> lOrig, LinkedList<Integer> lAdded) {// checks if the elements
 		//are the same and have the same number of occurrences except the added term
-		int origCounter = 0;
-		int addedCounter = 0;
+		
+
+		
 		return false;
 	}
 }
