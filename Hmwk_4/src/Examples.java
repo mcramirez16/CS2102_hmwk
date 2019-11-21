@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.LinkedList;
+
 import org.junit.Test;
 
 public class Examples {
@@ -14,6 +16,8 @@ public class Examples {
 	IBinTree rightBT = new DataBT(3,new MtBT(),new MtBT());
 	IBinTree treeHeap = new DataBT(1,leftBT,rightBT);
 	IBinTree treeNotHeap = new DataBT(5,leftBT,rightBT);
+	LinkedList<Integer> l1 = new LinkedList<Integer>();
+	LinkedList<Integer> l2 = new LinkedList<Integer>();
 	
 	@Test
 	public void getNodeTest() {
@@ -40,11 +44,42 @@ public class Examples {
 		assertFalse(treeNotHeap.isHeap());
 	}
 	
+	/*
 	@Test
 	public void expectedValues() {
 		IBinTree heap2 = heap1.remMinElt();
 		assertTrue(HT2.expectedValues(heap1, heap2));
 		
+	}
+	*/
+	
+	/*
+	@Test
+	public void compareList() {
+		l1.add(1);
+		l1.add(2);
+		l1.add(2);
+		l1.add(3);
+		
+		l2.add(1);
+		l2.add(2);
+		l2.add(2);
+		l2.add(3);
+		
+		boolean equal = l1.equals(l2);
+		assertTrue(equal);
+	}
+	*/
+	
+	@Test
+	public void BtToList() {
+		LinkedList<Integer> list = HT.btToList(treeHeap);
+		
+		l1.add(1);
+		l1.add(2);
+		l1.add(3);
+		
+		assertEquals(list,l1);
 	}
 	
 

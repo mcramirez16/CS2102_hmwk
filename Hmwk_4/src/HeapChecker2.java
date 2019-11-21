@@ -8,6 +8,9 @@ public class HeapChecker2 {
 		if(hRemoved.isHeap()==false) {
 			correct = false;
 		}
+		else {
+			expectedValues(hOrig,hRemoved){}
+		}
 
 		return correct;
 
@@ -23,22 +26,17 @@ public class HeapChecker2 {
 		}
 	}
 	
-	boolean expectedValues(IHeap Orig, IBinTree After) {
-		boolean update = false;
+	boolean expectedValues(IHeap Orig,IBinTree After) {
+		LinkedList<Integer> origlist = new LinkedList<Integer>();
+		LinkedList<Integer> afterlist = new LinkedList<Integer>();
 		
-			if(Orig.hasElt(After.getNode())==false && After.getLeft()!=null && After.getRight()!= null){
-				update = false;
-			}
-			else if(expectedValues(Orig,After.getLeft())){
-				update = true;
-				if(expectedValues(Orig,After.getRight())) {
-					update = true;
-				} else {
-					update = false;
-				}
-			}
+		origlist = Orig.btToList();
+		origlist.remove(0);
+		afterlist = After.btToList();
+		
+		if(origlist.equals(afterlist)) {
 			
-			return update;
+		}
 	}
 
 }
