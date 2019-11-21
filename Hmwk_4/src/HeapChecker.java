@@ -1,6 +1,8 @@
 import java.util.LinkedList;
 
 public class HeapChecker {
+	
+	LinkedList<Integer> abtEltList = new LinkedList<Integer>();
 
 	public boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
 		return false;
@@ -11,7 +13,6 @@ public class HeapChecker {
 	
 	
 	public LinkedList<Integer> btToList(IBinTree aBT){// converts a binary tree to a list
-		LinkedList<Integer> abtEltList = new LinkedList<Integer>();
 		
 		if(aBT.size() != 0) {
 			
