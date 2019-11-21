@@ -53,7 +53,7 @@ public IBinTree getRight() {
 public boolean isHeap() {// determines if a binary tree is a heap
 	boolean updateBool = false;
 	
-	if(this.getNode() == 0) {
+	if(this.size() == 0) {
 		updateBool = true;//returns false when the BT is empty;
 	}
 	else {
