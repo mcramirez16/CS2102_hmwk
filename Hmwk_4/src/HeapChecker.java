@@ -1,18 +1,34 @@
 import java.util.LinkedList;
+import java.util.Collections;
+
+//import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 public class HeapChecker {
 	
 	LinkedList<Integer> abtEltList = new LinkedList<Integer>();
 
 	public boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
-		if(hAdded.isHeap() != true) {
+		if (hAdded.isHeap() != true) {
 			return false;
 		} else {
-			
-		}
-		
+			if (expectedSizeForAdd(hOrig, hAdded) != true) {
+				return false;
+			} else {
+				LinkedList<Integer> origList = btToList(hOrig);
+				LinkedList<Integer> addedList = btToList(hAdded);
+				origList.add(elt);
+				origList = sortList(origList);
+				addedList = sortList(addedList);
 
-	  }
+				if (origList.equals(addedList) != true) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}
+
+	}
 	
 	
 	public LinkedList<Integer> btToList(IBinTree aBT){// converts a binary tree to a list
@@ -27,30 +43,40 @@ public class HeapChecker {
 		return abtEltList;
 	}
 	
-	public boolean containSameEltsForAddEltTester(LinkedList<Integer> lOrig, LinkedList<Integer> lAdded) {// checks if the elements
-		//are the same and have the same number of occurrences except the added term
-		
-
-		
-		return false;
+	public LinkedList<Integer> sortList(LinkedList<Integer> aList){
+		Collections.sort(aList);
+		return aList;
 	}
 	
+	
 	public boolean remMinEltTester(IHeap hOrig, IBinTree hRemoved) {
-		boolean correct = false;
 		
-		if(hRemoved.isHeap()==false) {
-			correct = false;
-		}
-		else {
-			expectedValues(hOrig,hRemoved){}
-		}
+		if (hRemoved.isHeap() != true) {
+			return false;
+		} else {
+			if (expectedSizeForRem(hOrig, hRemoved) != true) {
+				return false;
+			} else {
+				LinkedList<Integer> origList = btToList(hOrig);
+				LinkedList<Integer> addedList = btToList(hRemoved);
+				origList.remove(0);
+				origList = sortList(origList);
+				addedList = sortList(addedList);
 
-		return correct;
+				if (origList.equals(addedList) != true) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}
+		
+		
 
 
 	  }
 	
-	boolean expectedSize(IHeap Orig,IBinTree After) {
+	boolean expectedSizeForRem(IHeap Orig,IBinTree After) {
 		if(After.size()==(Orig.size()-1)) {
 			return true;
 		}
@@ -59,19 +85,15 @@ public class HeapChecker {
 		}
 	}
 	
-	boolean expectedValues(IHeap Orig,IBinTree After) {
-		LinkedList<Integer> origlist = new LinkedList<Integer>();
-		LinkedList<Integer> afterlist = new LinkedList<Integer>();
-		
-		//origlist = Orig.btToList();
-		origlist.remove(0);
-		//afterlist = After.btToList();
-		
-		//if(origlist.equals(afterlist)) {
-			
-		//}
-		return false;
+	boolean expectedSizeForAdd(IHeap Orig,IBinTree After) {
+		if(After.size()==(Orig.size()+1)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 }
 
 
