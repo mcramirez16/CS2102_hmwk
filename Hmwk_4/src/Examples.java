@@ -96,6 +96,7 @@ public class Examples {
 		assertTrue(HT.addEltTester(heap1, 4, heap2));
 	}
 	
+	/*
 	@Test
 	public void badHeap1AddElt() {
 		IBinTree heap2 = badHeap1.addElt(4);
@@ -132,12 +133,12 @@ public class Examples {
 		assertTrue(HT.remMinEltTester(badHeap1, heap2));
 	}
 	
-	/*
+	
 	@Test
 	public void badheap2RemElt() {
 		IBinTree heap2 = badHeap2.remMinElt();
 		assertFalse(HT.remMinEltTester(badHeap1, heap2));
-	}*/
+	}
 	
 	@Test
 	public void badheap3RemElt() {
@@ -157,6 +158,6 @@ public class Examples {
 		assertTrue(HT.remMinEltTester(badHeap5, heap2));
 	}
 	
-
+	 */
 
 }
