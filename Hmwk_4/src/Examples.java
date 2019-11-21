@@ -7,7 +7,6 @@ import org.junit.Test;
 public class Examples {
 
 	HeapChecker HT = new HeapChecker();
-	HeapChecker2 HT2 = new HeapChecker2();
 	
 	IHeap left1 = new TestHeap(3,new MtHeap(),new MtHeap());
 	IHeap right1 = new TestHeap(5,new MtHeap(),new MtHeap());
@@ -82,5 +81,18 @@ public class Examples {
 		assertEquals(list,l1);
 	}
 	
+	/*
+	@Test
+	public void remMinTest() {
+		IBinTree heap2 = heap1.remMinElt();
+		assertTrue(HT.remMinEltTester(heap1,heap2));
+	}
+	*/
+	
+	@Test
+	public void addEltTest() {
+		IBinTree heap2 = heap1.addElt(4);
+		assertTrue(HT.addEltTester(heap1, 4, heap2));
+	}
 
 }
