@@ -5,7 +5,10 @@ public class DailyWeatherReport {
 	
 	GregorianCalendar date = new GregorianCalendar(2016,11,17);
 	LinkedList<Reading> readings = new LinkedList<Reading> ();
-	LinkedList<Double> temps = new LinkedList<Double>();
-	LinkedList<Double> rainfall = new LinkedList<Double>();
+	
+	DailyWeatherReport(GregorianCalendar date, LinkedList<Reading> readings){
+		this.date= date;
+		this.readings = readings;
+	}
 
 }
