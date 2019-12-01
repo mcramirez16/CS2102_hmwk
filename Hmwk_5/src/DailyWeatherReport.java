@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class DailyWeatherReport {
 	
-	GregorianCalendar date = new GregorianCalendar();
+	GregorianCalendar date = new GregorianCalendar(2019,1,1);
 	LinkedList<Reading> readings = new LinkedList<Reading> ();
 	
 	DailyWeatherReport(GregorianCalendar date, LinkedList<Reading> readings){
