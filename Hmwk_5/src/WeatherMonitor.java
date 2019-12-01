@@ -11,11 +11,14 @@ public class WeatherMonitor {
 		dailyreports.add(report);
 		
 	}
+	
 	public double totalRainfallForMonth(int month, int year) {
 		double total = 0.0;
 		for(int i =0;i<this.dailyreports.size();i++) {
-			if(this.dailyreports.get(i).date.YEAR==year) {
-				if(this.dailyreports.get(i).date.MONTH==month) {
+			int rYear = this.dailyreports.get(i).date.get(GregorianCalendar.YEAR);
+			if(rYear==year) {
+				int rMonth = this.dailyreports.get(i).date.get(GregorianCalendar.MONTH);
+				if(rMonth==month) {
 					total = calcRainfall(dailyreports.get(i));
 				}
 			}
