@@ -7,7 +7,13 @@ public class WeatherMonitor {
 	
 	
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
-		DailyWeatherReport report = new DailyWeatherReport(date,readings);
+		LinkedList<Double> temps = new LinkedList<Double>();
+		LinkedList<Double> rainfall = new LinkedList<Double>();
+		for(int i=0;i<readings.size();i++) {
+			temps.add(readings.get(i).degrees);
+			rainfall.add(readings.get(i).rainfall);
+		}
+		DailyWeatherReport report = new DailyWeatherReport(date,temps,rainfall);
 		dailyreports.add(report);
 		
 	}
@@ -28,8 +34,8 @@ public class WeatherMonitor {
 	
 	public double calcRainfall(DailyWeatherReport report) {
 		double rainfall = 0.0;
-		for(int i =0;i<report.readings.size();i++) {
-			rainfall += report.readings.get(i).rainfall;
+		for(int i =0;i<report.rainfall.size();i++) {
+			rainfall+=report.rainfall.get(i);
 		}
 		
 		return rainfall;
@@ -56,8 +62,8 @@ public class WeatherMonitor {
 	public double calcTempSum(DailyWeatherReport report) {
 
 		double totalTemp = 0.0;
-		for(int i=0; i<report.readings.size(); i++) {
-			totalTemp += report.readings.get(i).degrees;
+		for(int i=0; i<report.temps.size(); i++) {
+			totalTemp += report.temps.get(i);
 		}
 		
 		return totalTemp;
