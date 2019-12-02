@@ -34,5 +34,33 @@ public class WeatherMonitor {
 		
 		return rainfall;
 	}
+	
+	public double averageTempForMonth(int month, int year) {
+		double avgTempThisMonth = 0.0;
+		double tempSum = 0.0;
+		int reportCount = 0;
+		for(int i =0;i<this.dailyreports.size();i++) {
+			int rYear = this.dailyreports.get(i).date.get(GregorianCalendar.YEAR);
+			if(rYear==year) {
+				int rMonth = this.dailyreports.get(i).date.get(GregorianCalendar.MONTH);
+				if(rMonth==month) {
+					tempSum = calcTempSum(dailyreports.get(i));
+					reportCount = reportCount + 1;
+				}
+			}
+		}
+		avgTempThisMonth = tempSum / reportCount;
+		return avgTempThisMonth;
+	}
+	
+	public double calcTempSum(DailyWeatherReport report) {
+
+		double totalTemp = 0.0;
+		for(int i=0; i<report.readings.size(); i++) {
+			totalTemp += report.readings.get(i).degrees;
+		}
+		
+		return totalTemp;
+	}
 
 }

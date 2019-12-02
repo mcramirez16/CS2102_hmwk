@@ -16,7 +16,7 @@ public class Examples {
 		sensor1.add(rdg1);
 		sensor1.add(rdg2);
 		wm1.addDailyReport(new GregorianCalendar(2019,12,1), sensor1);
-		assertEquals(wm1.totalRainfallForMonth(12, 2019),5.0,0.01);
+		assertEquals(wm1.totalRainfallForMonth(12, 2019), 5.0, 0.01);
 	}
 
 }
