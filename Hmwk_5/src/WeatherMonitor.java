@@ -51,7 +51,7 @@ public class WeatherMonitor {
 				int rMonth = this.dailyreports.get(i).date.get(GregorianCalendar.MONTH);
 				if(rMonth==month) {
 					tempSum = calcTempSum(dailyreports.get(i));
-					reportCount = reportCount + 1;
+					reportCount = dailyreports.get(i).temps.size();
 				}
 			}
 		}
