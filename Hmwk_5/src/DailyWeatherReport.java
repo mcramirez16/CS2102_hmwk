@@ -16,18 +16,26 @@ public class DailyWeatherReport {
 		this.rainfall.addAll(rainfall);
 	}
 	
+	/**
+	 * Returns the date in GregorianCalendar format
+	 * @return GregorianCalendar date
+	 */
 	public GregorianCalendar getDate() {
 		return this.date;
 	}
 	
-	public int getRainSize() {
-		return this.rainfall.size();
-	}
-	
-	public int getTempSize() {
+	/**
+	 * Returns size of temperature list, both lists should be the same size
+	 * @return Integer size of rainfall & temperature list
+	 */
+	public int getSize() {
 		return this.temps.size();
 	}
 	
+	/**
+	 * Calculates total rainfall in the report
+	 * @return Double sum of rainfall from the report
+	 */
 	public double getTotalRainfall () {
 		double total=0.0;
 		for(int i =0;i<rainfall.size();i++) {
@@ -36,6 +44,10 @@ public class DailyWeatherReport {
 		return total;
 	}
 	
+	/**
+	 * Calculates total temperature readings for averaging
+	 * @return Double sum of temperatures from the report
+	 */
 	public double getTotalTemp() {
 		double total=0.0;
 		for(int i =0;i<temps.size();i++) {
