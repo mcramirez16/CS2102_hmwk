@@ -2,11 +2,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class DailyWeatherReport {
+public class DailyWeatherReport implements IReport {
 	
-	GregorianCalendar date = new GregorianCalendar(2019,1,1);
-	LinkedList<Double> temps = new LinkedList<Double>();
-	LinkedList<Double> rainfall = new LinkedList<Double>();
+	private GregorianCalendar date = new GregorianCalendar(2019,1,1);
+	private LinkedList<Double> temps = new LinkedList<Double>();
+	private LinkedList<Double> rainfall = new LinkedList<Double>();
 	
 	DailyWeatherReport(GregorianCalendar date, LinkedList<Double> temps, LinkedList<Double> rainfall){
 		this.date.set(Calendar.YEAR, date.get(GregorianCalendar.YEAR));
