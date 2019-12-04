@@ -3,10 +3,10 @@ import java.util.LinkedList;
 
 public class WeatherMonitor {
 	
-	LinkedList<DailyWeatherReport> dailyreports = new LinkedList<DailyWeatherReport>();
+	IList dailyreports = new ReportList();
 	
 	WeatherMonitor(IList dailyreports){
-		
+		this.dailyreports = dailyreports;
 	}
 	
 	
@@ -18,18 +18,18 @@ public class WeatherMonitor {
 			rainfall.add(readings.get(i).getRainfall());
 		}
 		DailyWeatherReport report = new DailyWeatherReport(date,temps,rainfall);
-		dailyreports.add(report);
+		dailyreports.addReport(report);
 		
 	}
 	
 	public double totalRainfallForMonth(int month, int year) {
 		double total = 0.0;
-		for(int i =0;i<this.dailyreports.size();i++) {
-			int rYear = this.dailyreports.get(i).getDate().get(GregorianCalendar.YEAR);
+		for(int i =0;i<this.dailyreports.getSize();i++) {
+			int rYear = this.dailyreports.getReport(i).getDate().get(GregorianCalendar.YEAR);
 			if(rYear==year) {
-				int rMonth = this.dailyreports.get(i).getDate().get(GregorianCalendar.MONTH);
+				int rMonth = this.dailyreports.getReport(i).getDate().get(GregorianCalendar.MONTH);
 				if(rMonth==month) {
-					total = dailyreports.get(i).getTotalRainfall();
+					total = dailyreports.getReport(i).getTotalRainfall();
 				}
 			}
 		}
@@ -41,13 +41,13 @@ public class WeatherMonitor {
 		double avgTempThisMonth = 0.0;
 		double tempSum = 0.0;
 		int reportCount = 0;
-		for(int i =0;i<this.dailyreports.size();i++) {
-			int rYear = this.dailyreports.get(i).getDate().get(GregorianCalendar.YEAR);
+		for(int i =0;i<this.dailyreports.getSize();i++) {
+			int rYear = this.dailyreports.getReport(i).getDate().get(GregorianCalendar.YEAR);
 			if(rYear==year) {
-				int rMonth = this.dailyreports.get(i).getDate().get(GregorianCalendar.MONTH);
+				int rMonth = this.dailyreports.getReport(i).getDate().get(GregorianCalendar.MONTH);
 				if(rMonth==month) {
-					tempSum = dailyreports.get(i).getTotalTemp();
-					reportCount = dailyreports.get(i).getTempSize();
+					tempSum = dailyreports.getReport(i).getTotalTemp();
+					reportCount = dailyreports.getReport(i).getTempSize();
 				}
 			}
 		}

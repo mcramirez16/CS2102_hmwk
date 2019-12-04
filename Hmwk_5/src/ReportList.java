@@ -4,9 +4,9 @@ public class ReportList implements IList{
 	
 	private LinkedList<DailyWeatherReport> reports = new LinkedList<DailyWeatherReport>();
 	
-	ReportList(LinkedList<DailyWeatherReport> reports){
-		this.reports = reports;
-	}
+//	ReportList(LinkedList<DailyWeatherReport> reports){
+//		this.reports = reports;
+//	}
 	
 	public int getSize() {
 		return this.reports.size();
@@ -14,6 +14,10 @@ public class ReportList implements IList{
 	
 	public DailyWeatherReport getReport(int index) {
 		return this.reports.get(index);
+	}
+	
+	public void addReport(DailyWeatherReport newReport) {
+		reports.add(newReport);
 	}
 
 }

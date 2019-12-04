@@ -6,7 +6,10 @@ import org.junit.Test;
 
 public class Examples {
 	
-	WeatherMonitor wm1 = new WeatherMonitor();
+
+	//LinkedList<DailyWeatherReport> ExistingData = new LinkedList<DailyWeatherReport>();
+	ReportList ExistingData = new ReportList();
+	WeatherMonitor wm1 = new WeatherMonitor(ExistingData);
 	LinkedList<Reading> sensor1 = new LinkedList<Reading>();
 	
 	public Examples(){

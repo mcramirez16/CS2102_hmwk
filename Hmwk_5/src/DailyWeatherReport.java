@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class DailyWeatherReport implements IList {
+public class DailyWeatherReport {
 	
 	private GregorianCalendar date = new GregorianCalendar(2019,1,1);
 	private LinkedList<Double> temps = new LinkedList<Double>();
