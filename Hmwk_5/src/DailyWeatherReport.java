@@ -2,11 +2,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class DailyWeatherReport implements IReport {
+public class DailyWeatherReport implements IList {
 	
-	IDate date = new GregorianCalendar(2019,1,1);
-	ITempSet temps = new LinkedList<Double>();
-	IRainfallSet rainfall = new LinkedList<Double>();
+	private GregorianCalendar date = new GregorianCalendar(2019,1,1);
+	private LinkedList<Double> temps = new LinkedList<Double>();
+	private LinkedList<Double> rainfall = new LinkedList<Double>();
 	
 	DailyWeatherReport(GregorianCalendar date, LinkedList<Double> temps, LinkedList<Double> rainfall){
 		this.date.set(Calendar.YEAR, date.get(GregorianCalendar.YEAR));
@@ -14,6 +14,34 @@ public class DailyWeatherReport implements IReport {
 		this.date.set(Calendar.DAY_OF_MONTH, date.get(GregorianCalendar.DAY_OF_MONTH));
 		this.temps.addAll(temps);
 		this.rainfall.addAll(rainfall);
+	}
+	
+	public GregorianCalendar getDate() {
+		return this.date;
+	}
+	
+	public int getRainSize() {
+		return this.rainfall.size();
+	}
+	
+	public int getTempSize() {
+		return this.temps.size();
+	}
+	
+	public double getTotalRainfall () {
+		double total=0.0;
+		for(int i =0;i<rainfall.size();i++) {
+			total+=rainfall.get(i);
+		}
+		return total;
+	}
+	
+	public double getTotalTemp() {
+		double total=0.0;
+		for(int i =0;i<temps.size();i++) {
+			total+=temps.get(i);
+		}
+		return total;
 	}
 
 }
