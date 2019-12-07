@@ -10,13 +10,27 @@ class ElectionData {
   Scanner keyboard = new Scanner(System.in);
   
   ElectionData() {
-    this.ballot.add("Gompei");
-    this.ballot.add("Husky");
+    
   }
   
   public void processVote(String first, String second, String third) {
-	  
+	  if(firstChoice.containsKey(first)) {
+		  firstChoice.replace(first, (firstChoice.get(first)+1));
+	  }
+	  if(secondChoice.containsKey(second)) {
+		  firstChoice.replace(second, (secondChoice.get(second)+1));
+	  }
+	  if(thirdChoice.containsKey(third)) {
+		  firstChoice.replace(third, (thirdChoice.get(third)+1));
+	  }
   }
+  
+  public void addCandidate(String cand) throws CandidateExistsException {
+	  firstChoice.put(cand, 0);
+	  secondChoice.put(cand, 0);
+	  thirdChoice.put(cand, 0);
+  }
+  
   public void printBallot() {
     System.out.println("The candidates are ");
     for (String s : ballot) {
