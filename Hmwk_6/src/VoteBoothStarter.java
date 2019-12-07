@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 
 class ElectionData {
 	HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
@@ -57,7 +58,20 @@ class ElectionData {
   }
   
   public String findWinnerMostFirstVotes() {
+	  int allVotes = 0;
+	  String Winner;
 	  
+	  Set<String> favVotes = firstChoice.keySet();
+	  
+	  for(String key : favVotes) {
+		  allVotes = allVotes + firstChoice.get(key);
+	  }
+	  
+	  for(String key : favVotes) {
+		  if(firstChoice.get(key) > (allVotes / 2)) {
+			  Winner = firstChoice.get(key);
+		  }
+	  }
   }
   
   public void printBallot() {
