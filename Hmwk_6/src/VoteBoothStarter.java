@@ -56,6 +56,10 @@ class ElectionData {
 	  thirdChoice.put(cand, 0);
   }
   
+  public String findWinnerMostFirstVotes() {
+	  
+  }
+  
   public void printBallot() {
     System.out.println("The candidates are ");
     for (String s : ballot) {
