@@ -59,7 +59,8 @@ class ElectionData {
   
   public String findWinnerMostFirstVotes() {
 	  int allVotes = 0;
-	  String Winner;
+	  String Winner = "InitialHoler";
+	  boolean winnerExists = false;
 	  
 	  Set<String> favVotes = firstChoice.keySet();
 	  
@@ -69,9 +70,16 @@ class ElectionData {
 	  
 	  for(String key : favVotes) {
 		  if(firstChoice.get(key) > (allVotes / 2)) {
-			  Winner = firstChoice.get(key);
+			  Winner = key;
+			  winnerExists = true;
 		  }
 	  }
+	  
+	  if(!winnerExists) {
+		  Winner = "Runoff required";
+	  }
+	  
+	  return Winner;
   }
   
   public void printBallot() {
