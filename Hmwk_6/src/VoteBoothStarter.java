@@ -82,6 +82,10 @@ class ElectionData {
 	  return Winner;
   }
   
+  public String findWinnerMostPoints() {
+	  
+  }
+  
   public void printBallot() {
     System.out.println("The candidates are ");
     for (String s : ballot) {
