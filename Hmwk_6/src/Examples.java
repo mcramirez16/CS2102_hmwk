@@ -20,5 +20,10 @@ public class Examples {
 	public void mostFirstVotesTest() {
 		assertEquals(ballot.findWinnerMostFirstVotes(),"Bakugo");
 	}
+	
+	@Test
+	public void mostVotesTest() {
+		assertEquals(ballot.findWinnerMostPoints(),"Bakugo");
+	}
 
 }
