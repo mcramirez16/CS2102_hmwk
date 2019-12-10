@@ -1,18 +1,32 @@
+import java.util.Scanner;
 
 public class VotingMachine {
+	
+	ElectionData data = new ElectionData();
+	Scanner keyboard = new Scanner(System.in);
+	
+	VotingMachine(ElectionData data) {
+		this.data = data;
+	}
 
 	 public void printBallot() {
 		    System.out.println("The candidates are ");
-		    for (String s : ballot) {
+		    for (String s : data.getCandidateList()) {
 		      System.out.println(s);
 		    }
 		  }
 		  
-		  public void screen() throws CandidateExistsException {
+		  public void screen() throws CandidateExistsException,UnknownCandidateException {
 		    this.printBallot();
 		    System.out.println("Who do you want to vote for?");
 		    String candidate = keyboard.next();
-		    addCandidate(candidate);
+		    try {
+		    data.addCandidate(candidate);
+		    }
+		    catch(CandidateExistsException e) {
+		    	System.out.println("Candidate Already Exists.");
+		    }
+		    
 		    System.out.println("You voted for " + candidate);
 		  }
 		  
