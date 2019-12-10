@@ -29,15 +29,13 @@ class ElectionData {
 	 whoAreYou(second);
 	 whoAreYou(third);
 	 
-	  if(firstChoice.containsKey(first)) {
+
 		  firstChoice.replace(first, (firstChoice.get(first)+1));
-	  }
-	  if(secondChoice.containsKey(second)) {
+
 		  firstChoice.replace(second, (secondChoice.get(second)+1));
-	  }
-	  if(thirdChoice.containsKey(third)) {
+
 		  firstChoice.replace(third, (thirdChoice.get(third)+1));
-	  }
+	  
   }
   
   public void whoAreYou(String aCand) throws UnknownCandidateException {
@@ -83,7 +81,12 @@ class ElectionData {
   }
   
   public String findWinnerMostPoints() {
-	  HashMap<String, Integer> totalScore = new HashMap<String, Integer>;
+	  HashMap<String, Integer> totalScore = new HashMap<String, Integer>();
+	  
+	  Set<String> fcVotes = firstChoice.keySet();
+	  Set<String> scVotes = secondChoice.keySet();
+	  Set<String> tcVotes = thirdChoice.keySet();
+	  
 	  
 	  
   }
