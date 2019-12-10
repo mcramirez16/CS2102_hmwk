@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 class ElectionData {
-	HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
-	HashMap<String,Integer> secondChoice = new HashMap<String,Integer>();
-	HashMap<String,Integer> thirdChoice = new HashMap<String,Integer>();
+	private HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
+	private HashMap<String,Integer> secondChoice = new HashMap<String,Integer>();
+	private HashMap<String,Integer> thirdChoice = new HashMap<String,Integer>();
 	
   Scanner keyboard = new Scanner(System.in);
   
@@ -83,6 +83,8 @@ class ElectionData {
   }
   
   public String findWinnerMostPoints() {
+	  HashMap<String, Integer> totalScore = new HashMap<String, Integer>;
+	  
 	  
   }
   
