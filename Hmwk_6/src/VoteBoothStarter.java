@@ -32,10 +32,10 @@ class ElectionData {
 
 		  firstChoice.replace(first, (firstChoice.get(first)+1));
 
-		  firstChoice.replace(second, (secondChoice.get(second)+1));
+		  secondChoice.replace(second, (secondChoice.get(second)+1));
 
-		  firstChoice.replace(third, (thirdChoice.get(third)+1));
-	  
+		  thirdChoice.replace(third, (thirdChoice.get(third)+1));
+
   }
   
   public void whoAreYou(String aCand) throws UnknownCandidateException {
