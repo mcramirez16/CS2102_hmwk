@@ -7,11 +7,20 @@ class ElectionData {
 	private HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
 	private HashMap<String,Integer> secondChoice = new HashMap<String,Integer>();
 	private HashMap<String,Integer> thirdChoice = new HashMap<String,Integer>();
-	
-  Scanner keyboard = new Scanner(System.in);
   
   ElectionData() {
-    
+
+  }
+  
+  public LinkedList<String> getCandidateList(){
+	  Set<String> fcVotes = firstChoice.keySet();
+	  LinkedList<String> candList = new LinkedList<String>();
+	  
+	  for(String key : fcVotes) {
+		  candList.add(key);
+	  }
+	  
+	  return candList;
   }
   
   public void processVote(String first, String second, String third) throws UnknownCandidateException, DuplicateVotesException{
