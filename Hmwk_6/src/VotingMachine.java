@@ -16,15 +16,15 @@ public class VotingMachine {
 		    }
 		  }
 		  
-		  public void screen() throws CandidateExistsException,UnknownCandidateException {
+		  public void screen() throws UnknownCandidateException,CandidateExistsException {
 		    this.printBallot();
 		    System.out.println("Who do you want to vote for?");
 		    String candidate = keyboard.next();
 		    try {
 		    data.addCandidate(candidate);
 		    }
-		    catch(CandidateExistsException e) {
-		    	System.out.println("Candidate Already Exists.");
+		    catch(UnknownCandidateException e) {
+		    	System.out.println("Candidate not on list");
 		    }
 		    
 		    System.out.println("You voted for " + candidate);
