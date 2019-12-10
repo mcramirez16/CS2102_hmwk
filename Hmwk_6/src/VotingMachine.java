@@ -9,6 +9,7 @@ public class VotingMachine {
 		this.data = data;
 	}
 
+	
 	 public void printBallot() {
 		    System.out.println("The candidates are ");
 		    for (String s : data.getCandidateList()) {
@@ -29,6 +30,8 @@ public class VotingMachine {
 		    }
 		    catch(UnknownCandidateException e) {
 		    	System.out.println("Do you wish to add candidate? Enter Y/N");
+		    		String response = keyboard.nextLine();
+		    		if(response.contains("y")||response.contains("Y")) {
 		    		if(!data.getCandidateList().contains(cand1)) {
 		    			addWriteIn(cand1);
 		    		}
@@ -38,11 +41,17 @@ public class VotingMachine {
 		    		if(!data.getCandidateList().contains(cand3)) {
 		    			addWriteIn(cand3);
 		    		}
+		    		screen();
+		    		}
+		    		else {
+		    			System.out.println("Candidate not added");
+		    		}
 		    	
 		    	
 		    }
 		    catch(DuplicateVotesException e) {
 		    	System.out.println("You can't vote for the same candidate twice.");
+		    	screen();
 		    }
 
 		    System.out.println("You voted for " + cand1+cand2+cand3);
@@ -53,6 +62,7 @@ public class VotingMachine {
 			  data.addCandidate(name);
 		    	}catch(CandidateExistsException e) {
 		    		System.out.print("Candidate Already Exists");
+		    		
 		    	}
 		    	
 		    }
