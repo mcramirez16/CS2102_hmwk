@@ -57,7 +57,7 @@ class ElectionData {
   
   public String findWinnerMostFirstVotes() {
 	  int allVotes = 0;
-	  String Winner = "InitialHoler";
+	  String Winner = "InitialHolder";
 	  boolean winnerExists = false;
 	  
 	  Set<String> favVotes = firstChoice.keySet();
@@ -84,11 +84,23 @@ class ElectionData {
 	  HashMap<String, Integer> totalScore = new HashMap<String, Integer>();
 	  
 	  Set<String> fcVotes = firstChoice.keySet();
-	  Set<String> scVotes = secondChoice.keySet();
-	  Set<String> tcVotes = thirdChoice.keySet();
 	  
+	  for(String key : fcVotes) {
+		  totalScore.put(key, firstChoice.get(key) * 3 + secondChoice.get(key) * 2 + thirdChoice.get(key));
+	  }
 	  
+	  Set<String> voteScore = totalScore.keySet();
+	  int lastCandScore = 0;
+	  String winner = "InitialHolder";
 	  
+	  for(String key : voteScore) {
+		  if(totalScore.get(key) >= lastCandScore) {
+			  lastCandScore = totalScore.get(key);
+			  winner = key;
+		  }
+	  }
+	  
+	  return winner;
   }
   
   public void printBallot() {
