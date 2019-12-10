@@ -20,12 +20,10 @@ public class VotingMachine {
 		    this.printBallot();
 		    System.out.println("Who do you want to vote for?");
 		    String candidate = keyboard.next();
-		    try {
-		    data.addCandidate(candidate);
+		    if(data.getCandidateList().contains(candidate)) {
+		    	throw new UnknownCandidateException(candidate);
 		    }
-		    catch(UnknownCandidateException e) {
-		    	System.out.println("Candidate not on list");
-		    }
+		    
 		    
 		    System.out.println("You voted for " + candidate);
 		  }
