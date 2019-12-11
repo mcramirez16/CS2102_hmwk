@@ -7,6 +7,9 @@ public class UnknownCandidateException extends Exception {
 		this.name = name;
 	}
 	
+	/*
+	 * gets the name of the unknown candidate 
+	 */
 	public String getUnknownCand() {
 		return this.name;
 	}

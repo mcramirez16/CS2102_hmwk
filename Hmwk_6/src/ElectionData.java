@@ -12,6 +12,10 @@ class ElectionData {
 
   }
   
+  /**
+   * Gets the list of candidates from election data
+   * @return a LinkedList that contains all the candidates 
+   */
   public LinkedList<String> getCandidateList(){
 	  Set<String> fcVotes = firstChoice.keySet();
 	  LinkedList<String> candList = new LinkedList<String>();
@@ -23,6 +27,14 @@ class ElectionData {
 	  return candList;
   }
   
+  /**
+   * Takes in a vote casted and stores the choices in election data
+   * @param first is the voter's top choice
+   * @param second is the voter's second choice
+   * @param third is the voter's third choice
+   * @throws UnknownCandidateException when the vote contains a name that is not one of the candidates in election data
+   * @throws DuplicateVotesException when the vote has the same name for more than one of the ranked choices, which is not allowed
+   */
   public void processVote(String first, String second, String third) throws UnknownCandidateException, DuplicateVotesException{
 	 
 	   
@@ -47,12 +59,22 @@ class ElectionData {
 
   }
   
+  /**
+   * Checks if a name is not in the list of candidates in election data
+   * @param aCand is a name
+   * @throws UnknownCandidateException when the name is not in the current list of candidates in election data
+   */
   public void whoAreYou(String aCand) throws UnknownCandidateException {
 	  if(!firstChoice.containsKey(aCand) && !secondChoice.containsKey(aCand) && !thirdChoice.containsKey(aCand)) {
 		  throw new UnknownCandidateException(aCand);
 	  }
   }
   
+  /**
+   * Adds a new candidate in election data
+   * @param cand is the name of a new candidate
+   * @throws CandidateExistsException when the name entered already is a candidate in election data
+   */
   public void addCandidate(String cand) throws CandidateExistsException {
 	  
 	  if(firstChoice.containsKey(cand) && secondChoice.containsKey(cand) && thirdChoice.containsKey(cand)) {
@@ -64,6 +86,10 @@ class ElectionData {
 	  thirdChoice.put(cand, 0);
   }
   
+  /**
+   * Determines the winner of the election, who wins by having more than half of all the votes
+   * @return the name of the winner as a String; if there is no clear winner, returns the message "Runoff required"
+   */
   public String findWinnerMostFirstVotes() {
 	  int allVotes = 0;
 	  String Winner = "InitialHolder";
@@ -89,6 +115,10 @@ class ElectionData {
 	  return Winner;
   }
   
+  /**
+   * Determines the winner of the election, who wins by having the highest score
+   * @return the name of the winner as a String
+   */
   public String findWinnerMostPoints() {
 	  HashMap<String, Integer> totalScore = new HashMap<String, Integer>();
 	  

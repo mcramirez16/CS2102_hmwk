@@ -7,6 +7,9 @@ public class DuplicateVotesException extends Exception {
 		this.name = name;
 	}
 	
+	/*
+	 * gets the name of the repeated name in one vote
+	 */
 	public String getDuplicateName() {
 		return this.name;
 	}

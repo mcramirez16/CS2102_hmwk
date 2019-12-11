@@ -9,7 +9,9 @@ public class VotingMachine {
 		this.data = data;
 	}
 
-	
+	/**
+	 * display all the candidates to the voter at voting machine
+	 */
 	 public void printBallot() {
 		    System.out.println("The candidates are ");
 		    for (String s : data.getCandidateList()) {
@@ -17,6 +19,11 @@ public class VotingMachine {
 		    }
 		  }
 		  
+	 /**
+	  * let voter cast vote on voting machine
+	  * @throws UnknownCandidateException when the vote contains a name that is not one of the candidates in election data
+	  * @throws DuplicateVotesException when the vote has the same name for more than one of the ranked choices, which is not allowed
+	  */
 		  public void screen() throws UnknownCandidateException, DuplicateVotesException, CandidateExistsException {
 		    this.printBallot();
 		    System.out.println("Who is your first choice vote?");
@@ -57,6 +64,11 @@ public class VotingMachine {
 		    System.out.println("You voted for " + cand1+cand2+cand3);
 		  }
 		  
+		  /**
+		   * tells the voter the name already exists in election data as a candidate when trying to add a new candidate
+		   * @param name
+		   * @throws CandidateExistsException when the name entered already exists as a candidate in election data
+		   */
 		  public void addWriteIn(String name) throws CandidateExistsException{
 		    	try {
 			  data.addCandidate(name);
@@ -67,12 +79,4 @@ public class VotingMachine {
 		    	
 		    }
 		  
-		//  public int countVotes(String forcand) {
-//		    int numvotes = 0;
-//		    for (String s : votes) {
-//		      if (s.equals(forcand))
-//		        numvotes = numvotes+1;
-//		    }
-//		    return numvotes;
-//		    }
 }
